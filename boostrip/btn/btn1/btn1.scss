@@ -1,0 +1,24 @@
+
+.btn1{
+    
+    li{
+        list-style: none;
+
+        a{
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+            background-color: #28a37a;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 10% / 50%;
+            font-size: 150%;
+
+            &:hover{
+                background-color: #4addac;
+            }
+            
+
+        }
+    }
+}
