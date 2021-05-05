@@ -1,6 +1,6 @@
-<?php
-include './inc/inc_top.php';
+<?php 
 
+require './inc/inc_top.php';
 
 ?>
 
@@ -11,9 +11,4 @@ include './inc/inc_top.php';
             <a href="./pages/connexion.php">Connexion</a>
         </div>
     </div>
-
-
-
-
-
 </div>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../public/css/header.css">
-    <link rel="stylesheet" href="../public/css/main.css">
+     <link rel="stylesheet" href="../public/css/main.css">
 </head>
 
 <body>
@@ -171,7 +171,6 @@
 
 
 <!-- navbar version ecranc pc -->
-
     <nav class="navbar3">
         <a href="" class="navbarSvg1">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="110" viewBox="0 0 657.552 161.678">
