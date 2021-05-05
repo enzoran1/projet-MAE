@@ -12,14 +12,10 @@
 
 <body>
 
-    <!--
-    debut de ma nav bar pour mobile
--->
+<!-- debut de ma nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
 
-        <!--
-    logo de ma navbar 
--->
+<!-- logo de ma navbar -->
         <a href="" class="nav-logo">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -44,9 +40,7 @@
             </svg>
         </a>
 
-        <!--
-            construction a l'aide d'un svg du button accordéon
-        -->
+<!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button">
 
             <svg viewBox="0 0 100 80" widht="40" height="40">
@@ -59,9 +53,7 @@
 
         </span>
 
-        <!--
-            Item de ma navbar
-        -->
+<!-- Item de ma navbar -->
         <ul class="nav-menu">
 
             <li class="nav-item">
@@ -92,22 +84,12 @@
         </ul>
 
     </nav>
+    <!--Fin de la nav bar mobile -->
 
-
-    <!--
-        Fin de la nav bar mobile
-    -->
-
-
-    <!--
-        navbar de la version tablette
-    -->
-
+    <!-- navbar de la version tablett -->
     <nav class="navbar2" id="ma-navbar">
 
-        <!--
-logo de ma navbar 
--->
+<!-- logo de ma navbar -->
         <a href="" class="nav-logo2">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -133,9 +115,7 @@ logo de ma navbar
         </a>
 
 
-        <!--
-    construction a l'aide d'un svg du button accordéon
--->
+<!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button2">
 
             <svg viewBox="0 0 100 80" widht="40" height="40">
@@ -148,9 +128,7 @@ logo de ma navbar
 
         </span>
 
-        <!--
-    Item de ma navbar
--->
+<!-- Item de ma navbar -->
         <ul class="nav-menu2">
 
             <li class="nav-item2">
@@ -192,9 +170,7 @@ logo de ma navbar
 
 
 
-    <!--
-    navbar version ecranc pc
--->
+<!-- navbar version ecranc pc -->
 
     <nav class="navbar3">
         <a href="" class="navbarSvg1">
