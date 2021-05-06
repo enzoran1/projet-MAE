@@ -1,0 +1,44 @@
+body{
+    overflow-x: hidden;
+}
+
+
+.ban{
+    
+    background-image: url(./image/pexels-sharefaith-1231230.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+   
+    
+
+
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    padding-top: 50%;
+}
+
+
+.btn a{
+
+    
+text-decoration: none;
+color: white;
+background-color: #ff58378c;
+padding: 8px;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 10%/50%;
+font-weight: bold;
+font-size: 120%;
+
+    
+}
+.btn a:hover{
+    background-color: #ff5837;
+}
+
+
