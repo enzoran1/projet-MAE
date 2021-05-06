@@ -8,6 +8,7 @@ function dynamicTitle() {
     if ($title === 'index') { 
         $title = 'Accueil';
     } 
+    $title = 'Alumnifa -'. ' '. $title;
     echo $title;
 }
 
