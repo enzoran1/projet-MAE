@@ -1,25 +1,34 @@
-body{
-    overflow-x: hidden;
-}
+
 
 
 .ban{
     
-    background-image: url(./image/pexels-sharefaith-1231230.jpg);
+    background-image: url(./image/pexels-aidan-roof-2449600.jpg);
     background-size: cover;
     height: 100vh;
     background-position: center;
-   
-    
-
-
-}
-
-.btn{
     display: flex;
+    flex-direction: column;
+    align-content: center;
     justify-content: center;
-    padding-top: 50%;
+    text-align: center;
 }
+
+
+.ban{
+    background-color: rgba(0, 0, 0, 0.438);
+}
+.ban-titre{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.ban-titre h1{
+    margin-bottom: 20px;
+}
+
+
+
 
 
 .btn a{
@@ -34,11 +43,88 @@ margin-right: 20px;
 border-radius: 10%/50%;
 font-weight: bold;
 font-size: 120%;
+transition: 1s;
 
     
 }
 .btn a:hover{
     background-color: #ff5837;
+    transition: 1s;
+}
+
+@media screen and (min-width:688px){
+
+    .ban-titre{
+        font-size: 150%;
+        transition: 1s;
+    }
+
+   .btn{
+       font-size: 140%;
+   }
+   .btn a{
+       margin-right: 50px;
+       margin-left: 50px;
+   }
+    
+
+
+}
+@media screen and (max-width:687px){
+
+    
+   
+}
+
+@media screen and (min-width:992px){
+    .btn{
+        font-size: 170%;
+    }
+    .ban-titre{
+        font-size: 170%;
+    
+    }
+    .btn a{
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+
+    
+}
+@media screen and (max-width:991px){
+    
+
+}
+
+
+@media screen and (min-width:992px){
+
+  
+
+   
+}
+@media screen and (min-width:1312px){
+    .ban-titre{
+        font-size: 200%;
+    
+    }
+
+   .btn{
+       font-size: 220%;
+   }
+   .btn a{
+    margin-right: 70px;
+    margin-left: 70px;
+}
+
+}
+
+
+@media screen and (min-width:1500px){
+
+    
+    
+
 }
 
 
