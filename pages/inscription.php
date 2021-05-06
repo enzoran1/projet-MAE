@@ -3,51 +3,33 @@
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
 
-// $requete = $bdd->prepare('SELECT * FROM professions');
-// $requete->execute();
-// $professions = $requete->fetchAll(PDO::FETCH_ASSOC);
+$requete = $bdd->prepare('SELECT * FROM situations');
+$requete->execute();
+$situations = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-// $requete = $bdd->prepare('SELECT * FROM secteurs');
-// $requete->execute();
-// $secteurs = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-// $requete = $bdd->prepare('SELECT * FROM villes');
-// $requete->execute();
-// $villes = $requete->fetchAll(PDO::FETCH_ASSOC);
 
 
 
 if (!empty($_POST)) {
 
-    if (
-        isset($_POST['prenom'], $_POST['nom'], $_POST['email'], $_POST['password'], $_POST['tel'], $_POST['profession'], $_POST['secteur'], $_POST['ville'])
-        && !empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['password']) &&
-        !empty($_POST['tel']) && !empty($_POST['profession']) && !empty($_POST['secteur']) && !empty($_POST['ville'])
+    if (isset($_POST['email'], $_POST['password'], $_POST['tel']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['tel'])) {
 
-
-    ) {
-
-        $prenom = strip_tags($_POST['prenom']);
-        $nom = strip_tags($_POST['nom']);
         if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             die("l'adresse email est incorrecte");
         }
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
-        $tel = $_POST['tel'];
-        $profession = $_POST['profession'];
+        $tel = strip_tags($_POST['tel']);
+    }
 
-        $secteur = $_POST['secteur'];
-        $ville = $_POST['ville'];
+    $requete = $bdd->prepare('INSERT INTO user(mail, mdp, telephone) VALUES(?,?,?)');
+    $requete->execute(array($email, $password, $tel));
 
-
-        $requete = $bdd->prepare('INSERT INTO users(prenom, nom, email, password, tel, profession, secteur
-        ,ville) VALUES(?,?,?,?,?,?,?,?)');
-        $requete->execute(array($prenom, $nom, $email, $password, $tel, $profession, $secteur, $ville));
-    } else {
-        die("le formulaire est incomplet");
+    if (isset($_POST['situation']) && $_POST['situation'] == 1) {
+        header('Location: inseleves.php');
     }
 }
+
 
 
 
@@ -55,16 +37,7 @@ if (!empty($_POST)) {
 
 
 <form action="" method="POST">
-    <div>
-        <label for="prenom">
-            <input type="text" name="prenom" id="prenom" placeholder="prenom">
-        </label>
-    </div>
-    <div>
-        <label for="nom">
-            <input type="text" name="nom" id="nom" placeholder="nom">
-        </label>
-    </div>
+
     <div>
         <label for="email">
             <input type="email" name="email" id="email" placeholder="email">
@@ -72,51 +45,27 @@ if (!empty($_POST)) {
     </div>
     <div>
         <label for="password">
-            <input type="password" name="password" id="password" placeholder="mot de passe">
+            <input type="password" name="password" id="password" placeholder="password">
         </label>
     </div>
     <div>
         <label for="tel">
-            <input type="tel" name="tel" id="tel" placeholder="tel">
+            <input type="text" name="tel" id="tel" placeholder="tel">
         </label>
     </div>
+
     <div>
 
-        <label for="profession"></label>
+        <label for="situation"></label>
 
-        <select name="profession" id="profession">
-            <option value="">--Profession--</option>
-            <?php foreach ($professions as $profession) { ?>
-                <option value="<?= $profession['id_profession'] ?>"><?= $profession['label_profession'] ?></option>
-            <?php } ?>
-        </select>
-    </div>
-    <div>
-        <label for="secteur"></label>
-
-        <select name="secteur" id="secteur">
-            <option value="">--Secteur--</option>
-            <?php foreach ($secteurs as $secteur) { ?>
-                <option value="<?= $secteur['id_secteur'] ?>"><?= $secteur['label_secteur'] ?></option>
+        <select name="situation" id="situation">
+            <option value="">--situation--</option>
+            <?php foreach ($situations as $situation) { ?>
+                <option value="<?= $situation['id_situation'] ?>"><?= $situation['label_situation'] ?></option>
             <?php } ?>
         </select>
     </div>
 
-
-    <div>
-
-
-        <label for="ville"></label>
-
-        <select name="ville" id="ville">
-            <option value="">--Ville--</option>
-
-            <?php foreach ($villes as $ville) { ?>
-                <option value="<?= $ville['id_ville'] ?>"><?= $ville['label_ville'] ?></option>
-            <?php } ?>
-
-        </select>
-    </div>
 
     <button type="submit">envoyer</button>
 
