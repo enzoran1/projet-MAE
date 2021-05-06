@@ -1,1 +1,13 @@
-DirectoryIndex index.php
+# page index :
+    DirectoryIndex index.php
+
+# page d'erreurs :
+    ErrorDocument 404 /errors/404.php
+
+# règles de réecriture d'URL : 
+
+    RewriteEngine On
+
+# Commentaire pour expliquer la règle ... 
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.php [NC,L]
