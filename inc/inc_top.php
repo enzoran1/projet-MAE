@@ -1,3 +1,18 @@
+<?php 
+
+function dynamicTitle() {
+    $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
+
+    explode('/', $title);
+    $title = str_replace(array('/', '.php', 'pages'), '', $title);
+    if ($title === 'index') { 
+        $title = 'Accueil';
+    } 
+    echo $title;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,12 +20,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php dynamicTitle() ?></title>
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/main.css">
 </head>
 
 <body>
+    
 
     <!-- debut de ma nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
