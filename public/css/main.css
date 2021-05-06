@@ -5,7 +5,7 @@ body{
 
 .ban{
     
-    background-image: url(./image/pexels-sharefaith-1231230.jpg);
+    background-image: url(./image/pexels-sharefaith-1231230.jpg); /* à changer en html  */ 
     background-size: cover;
     height: 100vh;
     background-position: center;

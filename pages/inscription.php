@@ -10,7 +10,7 @@ $situations = $requete->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-if (!empty($_POST)) {
+if (!empty($_POST['submit'])) {
 
     if (isset($_POST['email'], $_POST['password'], $_POST['tel']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['tel'])) {
 
@@ -28,6 +28,8 @@ if (!empty($_POST)) {
     if (isset($_POST['situation']) && $_POST['situation'] == 1) {
         header('Location: inseleves.php');
     }
+    
+    var_dump($_POST);
 }
 
 

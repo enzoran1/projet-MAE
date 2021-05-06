@@ -1,7 +1,10 @@
 <?php 
 
 function dynamicTitle() {
-    $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
+    /* Dynamic Title 
+    *   Permet de modifier le title de manière dynamique, améliore le SEO 
+    */ 
+    $title = $_SERVER['PHP_SELF']; 
 
     explode('/', $title);
     $title = str_replace(array('/', '.php', 'pages'), '', $title);
@@ -27,12 +30,11 @@ function dynamicTitle() {
 </head>
 
 <body>
-    
 
-    <!-- debut de ma nav bar pour mobile -->
+    <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
 
-        <!-- logo de ma navbar -->
+        <!-- logo de la navbar -->
         <a href="" class="nav-logo">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -52,7 +54,6 @@ function dynamicTitle() {
                     <g id="Groupe_2" data-name="Groupe 2" transform="translate(0 0)" clip-path="url(#clip-path)">
                         <path id="Tracé_3" data-name="Tracé 3" d="M-306.772,169.037v26.032l-9.271-7.334a30.169,30.169,0,0,1-41.027-1.52,26.528,26.528,0,0,1,1.6-38.89,30.174,30.174,0,0,1,41.027,1.515,26.769,26.769,0,0,1,7.721,18.657c0,.525-.022,1.035-.048,1.54m-28.533-16.071c-8.313-.041-15.093,6.319-15.13,14.2s6.667,14.306,14.98,14.342,15.093-6.319,15.13-14.2v-.071c.016-7.859-6.688-14.25-14.98-14.271m-12.139-18.657c-3.384-7.145-12.236-10.338-19.774-7.13a14.179,14.179,0,0,0-8.835,12.812h17.842a35.028,35.028,0,0,0-10.67,13.261h-7.178v30.765h.005v11.057h-14.173V141.491h.038c-.016-.347-.027-.689-.027-1.04-.081-15.1,12.763-27.409,28.695-27.485,12.768-.061,24.057,7.834,27.759,19.417-.511-.02-1.017-.036-1.534-.036a38.184,38.184,0,0,0-12.149,1.964m-57.793-1.969a9.97,9.97,0,0,1-10.223-9.691,9.97,9.97,0,0,1,10.223-9.691,9.97,9.97,0,0,1,10.223,9.691,9.966,9.966,0,0,1-10.223,9.691m6.995,62.733h-13.99V139.991h13.99Z" transform="translate(445.591 -85.419)" fill="#ff5737" fill-rule="evenodd" />
                     </g>
-
                 </g>
             </svg>
         </a>
@@ -69,7 +70,6 @@ function dynamicTitle() {
             </svg>
 
         </span>
-
         <!-- Item de ma navbar -->
         <ul class="nav-menu">
 
@@ -89,7 +89,7 @@ function dynamicTitle() {
                 <a href="#">Compte</a>
             </li>
             <li class="nav-item">
-                <a href="#">Inscription</a>
+                <a href="pages/inscription">Inscription</a>
             </li>
             <div class="nav-item-recherche">
                 <form action="/">
@@ -99,7 +99,6 @@ function dynamicTitle() {
 
             </div>
         </ul>
-
     </nav>
     <!--Fin de la nav bar mobile -->
 
@@ -131,18 +130,13 @@ function dynamicTitle() {
             </svg>
         </a>
 
-
         <!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button2">
-
             <svg viewBox="0 0 100 80" widht="40" height="40">
-
                 <rect fill="#FFFFFF" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="30" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="60" width="100" height="5"></rect>
-
             </svg>
-
         </span>
 
         <!-- Item de ma navbar -->
@@ -164,7 +158,7 @@ function dynamicTitle() {
                 <a href="#">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Inscription</a>
+                <a href="page/inscription">Inscription</a>
             </li>
 
             <div class="nav-item-recherche2">
@@ -173,13 +167,7 @@ function dynamicTitle() {
                     <button type="submit"><img src="./public/css/image/icons8-search-24.png" alt=""></button>
                 </form>
             </div>
-
-
-
-
         </ul>
-
-
     </nav>
 
 
@@ -342,7 +330,6 @@ function dynamicTitle() {
             </svg>
         </a>
 
-
         <ul class="nav-menu3">
             <li class="nav-item3">
                 <a href="">Accueil</a>
@@ -360,7 +347,7 @@ function dynamicTitle() {
         <div>
             <div class="nav-item3-right">
                 <a href="">Compte</a>
-                <a href="">Inscription</a>
+                <a href="pages/inscription">Inscription</a>
             </div>
             <div class="nav-item-recherche3">
 
