@@ -36,20 +36,25 @@
     
 text-decoration: none;
 color: white;
-background-color: #ff58378c;
-padding: 8px;
+background: linear-gradient(115deg, rgba(255,124,0,1) 0%,rgba(255,87,56,1) 100%);
+padding: 10px;
 margin-left: 20px;
 margin-right: 20px;
-border-radius: 10%/50%;
+border-radius: 13%/50%;
 font-weight: bold;
-font-size: 120%;
+font-size: 100%;
 transition: 1s;
+padding-left: 18px;
+padding-right: 18px;
+
 
     
 }
 .btn a:hover{
-    background-color: #ff5837;
-    transition: 1s;
+
+    background: linear-gradient(115deg, rgba(255,87,56,1) 0%,rgba(255,124,0,1) 100%);
+    
+    
 }
 
 @media screen and (min-width:688px){
@@ -65,7 +70,10 @@ transition: 1s;
    .btn a{
        margin-right: 50px;
        margin-left: 50px;
+       padding-left: 25px;
+       padding-right: 25px;
    }
+   
     
 
 
@@ -87,6 +95,8 @@ transition: 1s;
     .btn a{
         margin-right: 60px;
         margin-left: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
     
@@ -115,6 +125,8 @@ transition: 1s;
    .btn a{
     margin-right: 70px;
     margin-left: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 }
