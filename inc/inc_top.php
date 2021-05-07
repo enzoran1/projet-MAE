@@ -1,3 +1,19 @@
+<?php 
+
+function dynamicTitle() {
+    $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
+
+    explode('/', $title);
+    $title = str_replace(array('/', '.php', 'pages'), '', $title);
+    if ($title === 'index') { 
+        $title = 'Accueil';
+    } 
+    $title = 'Alumnifa -'. ' '. $title;
+    echo $title;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,17 +21,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php dynamicTitle() ?></title>
     <link rel="stylesheet" href="../public/css/header.css">
-     <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
 </head>
 
 <body>
+    
 
-<!-- debut de ma nav bar pour mobile -->
+    <!-- debut de ma nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
 
-<!-- logo de ma navbar -->
+        <!-- logo de ma navbar -->
         <a href="" class="nav-logo">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -40,7 +57,7 @@
             </svg>
         </a>
 
-<!-- construction a l'aide d'un svg du button accordéon -->
+        <!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button">
 
             <svg viewBox="0 0 100 80" widht="40" height="40">
@@ -53,7 +70,7 @@
 
         </span>
 
-<!-- Item de ma navbar -->
+        <!-- Item de ma navbar -->
         <ul class="nav-menu">
 
             <li class="nav-item">
@@ -89,7 +106,7 @@
     <!-- navbar de la version tablett -->
     <nav class="navbar2" id="ma-navbar">
 
-<!-- logo de ma navbar -->
+        <!-- logo de ma navbar -->
         <a href="" class="nav-logo2">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -115,7 +132,7 @@
         </a>
 
 
-<!-- construction a l'aide d'un svg du button accordéon -->
+        <!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button2">
 
             <svg viewBox="0 0 100 80" widht="40" height="40">
@@ -128,7 +145,7 @@
 
         </span>
 
-<!-- Item de ma navbar -->
+        <!-- Item de ma navbar -->
         <ul class="nav-menu2">
 
             <li class="nav-item2">
@@ -170,7 +187,7 @@
 
 
 
-<!-- navbar version ecranc pc -->
+    <!-- navbar version ecranc pc -->
     <nav class="navbar3">
         <a href="" class="navbarSvg1">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="110" viewBox="0 0 657.552 161.678">
