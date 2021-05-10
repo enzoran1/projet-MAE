@@ -45,3 +45,6 @@ include 'inc/inc_top.php';
 
     </div>
 </div>
+
+
+<?php include 'inc/inc_bottom.php'; ?>
