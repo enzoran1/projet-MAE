@@ -1,16 +1,9 @@
 <?php
 
-<<<<<<< HEAD
-function dynamicTitle() {
-    /* Dynamic Title 
-    *   Permet de modifier le title de manière dynamique, améliore le SEO 
-    */ 
-    $title = $_SERVER['PHP_SELF']; 
-=======
+
 function dynamicTitle()
 {
     $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
->>>>>>> enzo
 
     explode('/', $title);
     $title = str_replace(array('/', '.php', 'pages'), '', $title);
