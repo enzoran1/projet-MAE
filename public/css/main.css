@@ -11,11 +11,7 @@ body{
 
 .ban{
     
-<<<<<<< HEAD
-    background-image: url(./image/pexels-sharefaith-1231230.jpg); /* à changer en html  */ 
-=======
     background-image: url(./image/ban-home.jpg);
->>>>>>> enzo
     background-size: cover;
     height: 100vh;
     background-position: center;
