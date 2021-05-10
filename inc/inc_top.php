@@ -1,17 +1,23 @@
-<?php 
+<?php
 
+<<<<<<< HEAD
 function dynamicTitle() {
     /* Dynamic Title 
     *   Permet de modifier le title de manière dynamique, améliore le SEO 
     */ 
     $title = $_SERVER['PHP_SELF']; 
+=======
+function dynamicTitle()
+{
+    $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
+>>>>>>> enzo
 
     explode('/', $title);
     $title = str_replace(array('/', '.php', 'pages'), '', $title);
-    if ($title === 'index') { 
+    if ($title === 'index') {
         $title = 'Accueil';
-    } 
-    $title = 'Alumnifa -'. ' '. $title;
+    }
+    $title = 'Alumnifa -' . ' ' . $title;
     echo $title;
 }
 
@@ -27,9 +33,14 @@ function dynamicTitle() {
     <title><?php dynamicTitle() ?></title>
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
 </head>
 
 <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> enzo
 
     <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
