@@ -30,10 +30,6 @@ function dynamicTitle()
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
-
->>>>>>> enzo
 
     <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
