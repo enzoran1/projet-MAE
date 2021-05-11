@@ -8,28 +8,47 @@ $requete->execute();
 $situations = $requete->fetchAll(PDO::FETCH_ASSOC);
 
 
+if (!empty($_POST['submit'])) 
+{ // On vérifie que le submit est lancé et que tous les champs sont remlis 
 
+    if (!empty($_POST['email']) 
+    && !empty($_POST['email']) 
+    && !empty($_POST['password']) 
+    && !empty($_POST['tel'])) {
 
-if (!empty($_POST['submit'])) {
+        echo 'ok <br>';
 
-    if (isset($_POST['email'], $_POST['password'], $_POST['tel']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['tel'])) {
+        // créer une requête permettant de comparer tous les mails avec celui entré (rowCount>0) 
 
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            die("l'adresse email est incorrecte");
-        }
         $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
-        $tel = strip_tags($_POST['tel']);
-    }
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $tel = $_POST['tel'];
 
-    $requete = $bdd->prepare('INSERT INTO user(mail, mdp, telephone) VALUES(?,?,?)');
-    $requete->execute(array($email, $password, $tel));
+        $requestEmailExist = $bdd->prepare("SELECT * FROM user WHERE email ='".$email."'");
+        $requestEmailExist->execute();;
+        $count = $requestEmailExist->rowCount(); // renvoi 0 si l'user n'existe pas... 1 s'il existe
+        
+        echo 'Vérification de l\'email... <br>';
 
-    if (isset($_POST['situation']) && $_POST['situation'] == 1) {
-        header('Location: inseleves.php');
-    }
-    
-    var_dump($_POST);
+        if($count > 0) 
+        { 
+            echo 'L\'email que vous avez utilisé existe déjà.';
+            die;
+        } 
+        else
+        { 
+            // dans le cas ou count est égal à 0
+            $requete = $bdd->prepare('INSERT INTO user(email, mdp, telephone) VALUES(?,?,?)');
+            $requete->execute(array($email, $password, $tel));
+            echo 'Votre compte a été créee';
+
+            if (isset($_POST['situation'])) 
+            {
+                header('Location: ./inseleves.php');
+            }
+        }
+
+    }   
 }
 
 
@@ -69,7 +88,9 @@ if (!empty($_POST['submit'])) {
     </div>
 
 
-    <button type="submit">envoyer</button>
+    <button type="submit" name="submit" value='submit'>Envoyer</button>
+
+    <?php var_dump($_POST); ?>
 
 
 </form>
