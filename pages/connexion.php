@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../inc/inc_top.php'; 
-include './cobdd.php';
+include '../pages/cobdd.php';
 
 
 function testConnexion() 
