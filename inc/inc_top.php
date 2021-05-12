@@ -80,7 +80,7 @@ function dynamicTitle()
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item">
-                <a href="#">Compte</a>
+                <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item">
                 <a href="pages/inscription">Inscription</a>
@@ -149,7 +149,7 @@ function dynamicTitle()
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Compte</a>
+                <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item2">
                 <a href="page/inscription">Inscription</a>
@@ -339,7 +339,7 @@ function dynamicTitle()
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="">Compte</a>
+                <a href="pages/connexion">Compte</a>
                 <a href="pages/inscription">Inscription</a>
             </div>
             <div class="nav-item-recherche3">

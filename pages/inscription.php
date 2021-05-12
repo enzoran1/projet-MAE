@@ -2,7 +2,6 @@
 session_start();
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
-ob_start();
 
 $requete = $bdd->prepare('SELECT * FROM situations');
 $requete->execute();
@@ -47,16 +46,13 @@ if (!empty($_POST['submit']))
 
             $_SESSION['email'] = $email;
 
-            $_POST['situation'] == 1        ?      $_SESSION['situations'] = 'eleves'       :       $_SESSION['situations'] = 'entreprise'; 
+            $_POST['situation'] == 1        ?      $_SESSION['situations'] = 'eleves'      :       $_SESSION['situations'] = 'entreprise'; 
 
-            if($_SESSION['situations'] == 'eleves') 
-            { 
-                header('Location: ./inseleves.php');
-            } 
-            else
-            {
-                header('Location: ./insentreprise.php');
-            }
+            
+            
+            echo 'Vous êtes enregistré en tant que'. $_SESSION['situations'] .'. Félicitations ! Veuillez maintenant vous connecter
+            en cliquant <a href="connexion"> ici </a>';
+            session_destroy();
         }
     }   
 } 
@@ -86,7 +82,7 @@ if (!empty($_POST['submit']))
         <label for="situation"></label>
 
         <select name="situation" id="situation">
-            <option value="">--situation--</option>
+            <option value="">-- situation --</option>
             <?php foreach ($situations as $situation) { ?>
                 <option value="<?= $situation['id_situation'] ?>"><?= $situation['label_situation'] ?></option>
             <?php } ?>
@@ -97,3 +93,4 @@ if (!empty($_POST['submit']))
     <button type="submit" name="submit" value='submit'>Envoyer</button>
 
 </form>
+
