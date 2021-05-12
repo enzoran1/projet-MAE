@@ -1,52 +1,41 @@
 <?php
-session_start();
-include '../inc/inc_top.php'; 
-include '../pages/cobdd.php';
+ob_start();
+require '../inc/inc_top.php'; 
 
 
-function testConnexion() 
-{ 
+
+
+if(isset($_POST['submit']))
+{
+ 
     if(
         !empty                  ($_POST['email']) 
         && !empty               ($_POST['mdp'])
     )
     { 
-        $yourEmail =            $_POST['email'];
-        $yourPassword =         password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+        require_once '../pages/cobdd.php'; 
+
+        $yourEmail          =    $_POST['email'];
+        $yourPassword       =    $_POST['mdp'];
 
         // 1ERE REQUETE : selectionne l'email
         $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='".$yourEmail."'");
         $queryUser->execute();
-        $count = $queryUser->rowCount();
+        $result = $queryUser->fetch();
 
-
-        // 2EME REQUETE : selectionne le mdp 
-        if($count > 0) 
+        // 2EME REQUETE : selectionne le mdp SI il reconnait le mail
+           if(!password_verify($yourPassword, $result['mdp']))
         { 
-            $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'");
-            // fonction pour decrypter le mdp.... 
-            $queryPassword->execute();
-            $count2 = $queryPassword->rowCount();
-
-            if($count2 > 0) 
-            {   
-                $_SESSION['mail'] = $_POST['email'];
-                $_SESSION['mdp'] = $_POST['mdp'];
-                header('Location: ../pages/dashboard.php'); // redirection vers dashboard
-            }
-            else
-            {
-                echo '<h2> Mdp incorrect </h2>';
-                session_destroy();
-            }
-        } 
-    }
-    else
-    { 
-        echo '<h2> Veuillez renseigner tous les champs</h2>';
-        session_destroy();
+            die('Mot de passe invalide');
+        }
+        else 
+        { 
+            ob_clean();
+            header('Location: dashboard.php');     
+        }    
     }
 }
+
 ?>
 
 
@@ -56,12 +45,12 @@ function testConnexion()
 
 <div>
         <label for="email">
-            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="email" name="email" id="email" placeholder="email">
         </label>
     </div>
     <div>
         <label for="password">
-            <input type="mdp" name="mdp" id="mdp" placeholder="Mot de pase">
+            <input type="password" name="mdp" id="mdp" placeholder="mdp">
         </label>
     </div>
 
@@ -70,16 +59,5 @@ function testConnexion()
 </form>
 
 <h2> <a href="../index.php"> Retour au menu </a> </h2>
-
-<?php 
-if(isset($_POST['submit']))
-{ 
-    testConnexion();
-
-
-    // $_POST['situations'] == 1        ?      $path = "inseleves"               :       $path = "insentreprise";
-} 
-
-?>
 
 <?php include '../inc/inc_bottom.php'; ?> 

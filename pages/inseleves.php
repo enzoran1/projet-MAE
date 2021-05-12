@@ -4,8 +4,58 @@ include '../inc/inc_top.php';
 include '../pages/cobdd.php';
 
 
+$_SESSION['situations'] = 1;
 
+if (!empty($_POST['submit'])) 
+{ // On vérifie que le submit est lancé et que tous les champs sont remlis 
+
+    if (
+            !empty          ($_POST['email']) 
+            && !empty       ($_POST['email']) 
+            && !empty       ($_POST['password']) 
+            && !empty       ($_POST['tel'])
+        ) 
+    {
+
+        $email = $_POST['email'];
+        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $tel = $_POST['tel'];
+
+        $requestEmailExist = $bdd->prepare("SELECT * FROM user WHERE email ='".$email."'");
+        $requestEmailExist->execute();;
+        $count = $requestEmailExist->rowCount(); // renvoi 0 si l'user n'existe pas... 1 s'il existe
+
+
+        if($count > 0) 
+        { 
+            echo 'L\'email que vous avez utilisé existe déjà.';
+            session_destroy();
+            die;
+        } 
+        else
+        { 
+            // dans le cas ou count est égal à 0, donc nouvel email on continue
+            $requete = $bdd->prepare(
+                'INSERT INTO user(email, mdp, telephone) 
+                VALUES(?,?,?)'
+            );
+
+            $requete->execute(array($email, $password, $tel)); 
+
+            $_SESSION['email'] = $email;
+
+            
+
+            
+            
+            echo 'Vous êtes enregistré en tant qu\'élèves. Félicitations ! Veuillez maintenant vous connecter
+            en cliquant <a href="connexion"> ici </a>';
+            session_destroy();
+        }
+    }   
+} 
 ?>
+
 
 <form action="" method="POST">
 
@@ -25,19 +75,10 @@ include '../pages/cobdd.php';
         </label>
     </div>
 
-    <div>
-
-        <label for="situation"></label>
-
-        <select name="situation" id="situation">
-            <option value="">--situation--</option>
-            <?php foreach ($situations as $situation) { ?>
-                <option value="<?= $situation['id_situation'] ?>"><?= $situation['label_situation'] ?></option>
-            <?php } ?>
-        </select>
-    </div>
 
 
-    <button type="submit">S'inscrire</button>  
+    <button type="submit" name="submit" value='submit'>Envoyer</button>
+
+</form>
 
     <?php include '../inc/inc_bottom.php'; ?>
