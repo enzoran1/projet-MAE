@@ -1,142 +1,106 @@
-
-
-
-.ban{
-    
-    background-image: url(./image/pexels-aidan-roof-2449600.jpg);
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
+.ban {
+  background-image: url(./image/pexels-aidan-roof-2449600.jpg);
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
 }
 
-
-.ban{
-    background-color: rgba(0, 0, 0, 0.438);
+.ban {
+  background-color: rgba(0, 0, 0, 0.438);
 }
-.ban-titre{
-    color: white;
-    font-weight: bold;
-    margin-bottom: 40px;
+.ban-titre {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 40px;
 }
-.ban-titre h1{
-    margin-bottom: 20px;
-}
-
-
-
-
-
-.btn a{
-
-    
-text-decoration: none;
-color: white;
-background: linear-gradient(115deg, rgba(255,124,0,1) 0%,rgba(255,87,56,1) 100%);
-padding: 10px;
-margin-left: 20px;
-margin-right: 20px;
-border-radius: 13%/50%;
-font-weight: bold;
-font-size: 100%;
-transition: 1s;
-padding-left: 18px;
-padding-right: 18px;
-
-
-    
-}
-.btn a:hover{
-
-    background: linear-gradient(115deg, rgba(255,87,56,1) 0%,rgba(255,124,0,1) 100%);
-    
-    
+.ban-titre h1 {
+  margin-bottom: 20px;
 }
 
-@media screen and (min-width:688px){
-
-    .ban-titre{
-        font-size: 150%;
-        transition: 1s;
-    }
-
-   .btn{
-       font-size: 140%;
-   }
-   .btn a{
-       margin-right: 50px;
-       margin-left: 50px;
-       padding-left: 25px;
-       padding-right: 25px;
-   }
-   
-    
-
-
+.btn a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 124, 0, 1) 0%,
+    rgba(255, 87, 56, 1) 100%
+  );
+  padding: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 13%/50%;
+  font-weight: bold;
+  font-size: 100%;
+  transition: 1s;
+  padding-left: 18px;
+  padding-right: 18px;
 }
-@media screen and (max-width:687px){
-
-    
-   
-}
-
-@media screen and (min-width:992px){
-    .btn{
-        font-size: 170%;
-    }
-    .ban-titre{
-        font-size: 170%;
-    
-    }
-    .btn a{
-        margin-right: 60px;
-        margin-left: 60px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    
-}
-@media screen and (max-width:991px){
-    
-
+.btn a:hover {
+  background: linear-gradient(
+    115deg,
+    rgba(255, 87, 56, 1) 0%,
+    rgba(255, 124, 0, 1) 100%
+  );
 }
 
+@media screen and (min-width: 688px) {
+  .ban-titre {
+    font-size: 150%;
+    transition: 1s;
+  }
 
-@media screen and (min-width:992px){
-
-  
-
-   
+  .btn {
+    font-size: 140%;
+  }
+  .btn a {
+    margin-right: 50px;
+    margin-left: 50px;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
-@media screen and (min-width:1312px){
-    .ban-titre{
-        font-size: 200%;
-    
-    }
+@media screen and (max-width: 687px) {
+}
 
-   .btn{
-       font-size: 220%;
-   }
-   .btn a{
+@media screen and (min-width: 992px) {
+  .btn {
+    font-size: 170%;
+  }
+  .ban-titre {
+    font-size: 170%;
+  }
+  .btn a {
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (min-width: 992px) {
+}
+@media screen and (min-width: 1312px) {
+  .ban-titre {
+    font-size: 200%;
+  }
+
+  .btn {
+    font-size: 220%;
+  }
+  .btn a {
     margin-right: 70px;
     margin-left: 70px;
     padding-left: 30px;
     padding-right: 30px;
+  }
 }
 
+@media screen and (min-width: 1500px) {
 }
-
-
-@media screen and (min-width:1500px){
-
-    
-    
-
-}
-
-
