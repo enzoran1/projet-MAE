@@ -1,6 +1,14 @@
-<<<<<<< HEAD
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #1f1f1f;
+  font-family: "Roboto", sans-serif;
+}
+
 .ban {
-  background-image: url(./image/pexels-aidan-roof-2449600.jpg);
+  background-image: url(./image/ban-home.jpg);
   background-size: cover;
   height: 100vh;
   background-position: center;
@@ -9,30 +17,6 @@
   align-content: center;
   justify-content: center;
   text-align: center;
-=======
-*{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: #1f1f1f;
-    font-family: 'Roboto', sans-serif;
-}
-
-
-
-.ban{
-    
-    background-image: url(./image/ban-home.jpg);
-    background-size: cover;
-    height: 100vh;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    text-align: center;
->>>>>>> martin
 }
 
 .ban {
@@ -73,7 +57,86 @@ body{
   );
 }
 
-<<<<<<< HEAD
+.titre-text {
+  color: white;
+  text-align: center;
+  padding: 16px;
+  border: 3px solid #ff5737;
+}
+.titre-text p {
+  text-align: justify;
+  margin-top: 20px;
+  transition: 1s;
+}
+.titre-text h2 {
+  margin-top: 20px;
+  transition: 1s;
+}
+#interogation-couleur {
+  color: #ff5737;
+}
+
+.carte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.carte h3 {
+  color: white;
+  margin-top: 30px;
+  font-size: 150%;
+}
+.carte a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 124, 0, 1) 0%,
+    rgba(255, 87, 56, 1) 100%
+  );
+  padding: 10px;
+  margin-left: 60px;
+  margin-right: 60px;
+  border-radius: 13%/50%;
+  font-weight: bold;
+  font-size: 150%;
+
+  transition: 1s;
+  margin-bottom: 15px;
+}
+.carte a:hover {
+  background: linear-gradient(
+    115deg,
+    rgba(255, 87, 56, 1) 0%,
+    rgba(255, 124, 0, 1) 100%
+  );
+}
+
+.carte-eleves,
+.carte-professionnels,
+.carte-interface-alumni {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 280px;
+  text-align: center;
+  background-image: url(./image/photo-carte.jpg);
+  background-size: cover;
+  margin-bottom: 45px;
+  border-radius: 5px;
+  transition: 1s;
+}
+.carte-professionnels {
+  background-image: url(./image/photo-carte1.jpg);
+}
+.carte-interface-alumni {
+  background-image: url(./image/photo-carte2.jpg);
+}
+
 @media screen and (min-width: 688px) {
   .ban-titre {
     font-size: 150%;
@@ -89,143 +152,32 @@ body{
     padding-left: 25px;
     padding-right: 25px;
   }
-=======
-.titre-text{
-    color: white;
-    text-align: center;
-    padding: 16px;
-    border: 3px solid #ff5737;
-    
-    
-    
-    
-}
-.titre-text p{
-    text-align: justify;
-    margin-top: 20px;
+  .titre-text {
+    padding: 32px;
+  }
+  .titre-text h2 {
+    font-size: 200%;
     transition: 1s;
-}
-.titre-text h2{
-    margin-top: 20px;
+  }
+  .titre-text p {
+    font-size: 120%;
     transition: 1s;
-}
-#interogation-couleur{
-    color:#ff5737 ;
-}
-
-.carte{
+  }
+  .carte {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-.carte h3{
-    color: white;
-    margin-top: 30px;
-    font-size: 150%;
-}
-.carte a{
-    text-decoration: none;
-color: white;
-background: linear-gradient(115deg, rgba(255,124,0,1) 0%,rgba(255,87,56,1) 100%);
-padding: 10px;
-margin-left: 60px;
-margin-right: 60px;
-border-radius: 13%/50%;
-font-weight: bold;
-font-size: 150%;
-
-transition: 1s;
-margin-bottom: 15px;
-}
-.carte a:hover{
-    background: linear-gradient(115deg, rgba(255,87,56,1) 0%,rgba(255,124,0,1) 100%);
-
-}
-
-.carte-eleves, .carte-professionnels,.carte-interface-alumni{
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 250px;
-    height: 280px;
-    text-align: center;
-    background-image: url(./image/photo-carte.jpg);
-    background-size: cover;
-    margin-bottom: 45px;
-    border-radius: 5px;
-    transition: 1s;
-    
-
-}
-.carte-professionnels{
-    
-    background-image: url(./image/photo-carte1.jpg);
-   
-
-}
-.carte-interface-alumni{
-    background-image: url(./image/photo-carte2.jpg);
-    
-    
-
-}
-
-
-
-
-
-@media screen and (min-width:688px){
-
-    .ban-titre{
-        font-size: 150%;
-        transition: 1s;
-    }
-
-   .btn{
-       font-size: 140%;
-   }
-   .btn a{
-       margin-right: 50px;
-       margin-left: 50px;
-       padding-left: 25px;
-       padding-right: 25px;
-   }
-   .titre-text{
-       padding: 32px;
-   }
-   .titre-text h2{
-       font-size: 200%;
-       transition: 1s;
-   }
-   .titre-text p{
-       font-size: 120%;
-       transition: 1s;
-   }
-   .carte{
-       display: flex;
-       justify-content: space-around;
-       flex-direction: initial;
-       margin: 10px;
-       margin-top: 50px;
-   }
-   .carte-professionnels{
-       margin-left: 10px;
-       margin-right: 10px;
-   }
-   
-    
-
-
->>>>>>> martin
+    justify-content: space-around;
+    flex-direction: initial;
+    margin: 10px;
+    margin-top: 50px;
+  }
+  .carte-professionnels {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 687px) {
 }
 
-<<<<<<< HEAD
 @media screen and (min-width: 992px) {
   .btn {
     font-size: 170%;
@@ -239,35 +191,17 @@ margin-bottom: 15px;
     padding-left: 30px;
     padding-right: 30px;
   }
-=======
-@media screen and (min-width:992px){
-    .btn{
-        font-size: 170%;
-    }
-    .ban-titre{
-        font-size: 170%;
-    
-    }
-    .btn a{
-        margin-right: 60px;
-        margin-left: 60px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    .titre-text{
-        padding: 42px;
-    }
-    .titre-text h2{
-        font-size: 230%;
-        transition: 1s;
-    }
-    .titre-text p{
-        font-size: 140%;
-        transition: 1s;
-    }
-
-    
->>>>>>> martin
+  .titre-text {
+    padding: 42px;
+  }
+  .titre-text h2 {
+    font-size: 230%;
+    transition: 1s;
+  }
+  .titre-text p {
+    font-size: 140%;
+    transition: 1s;
+  }
 }
 @media screen and (max-width: 991px) {
 }
@@ -289,34 +223,27 @@ margin-bottom: 15px;
     padding-right: 30px;
   }
 }
-.titre-text{
-    padding: 62px;
+.titre-text {
+  padding: 62px;
 }
-.titre-text h2{
-    font-size: 250%;
-    transition: 1s;
+.titre-text h2 {
+  font-size: 250%;
+  transition: 1s;
 }
-.titre-text p{
-    font-size: 160%;
-    transition: 1s;
+.titre-text p {
+  font-size: 160%;
+  transition: 1s;
 }
 
 @media screen and (min-width: 1500px) {
 }
-<<<<<<< HEAD
-=======
 
-
-@media screen and (min-width:1500px){
-
-    .carte-eleves,.carte-professionnels,.carte-interface-alumni{
-        width: 280px;
-        height: 320px;
-        transition: 1s;
-    }
-    
-
+@media screen and (min-width: 1500px) {
+  .carte-eleves,
+  .carte-professionnels,
+  .carte-interface-alumni {
+    width: 280px;
+    height: 320px;
+    transition: 1s;
+  }
 }
-
-
->>>>>>> martin
