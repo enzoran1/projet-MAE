@@ -26,6 +26,7 @@ function dynamicTitle()
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/modal.css">
 </head>
 
 <body>
@@ -76,7 +77,7 @@ function dynamicTitle()
         <ul class="nav-menu">
 
             <li class="nav-item">
-                <a href="#">Accueil</a>
+                <a href="../index">Accueil</a>
             </li>
             <li class="nav-item">
                 <a href="#">Découvrez l'IFA</a>
@@ -91,8 +92,9 @@ function dynamicTitle()
                 <a href="#">Compte</a>
             </li>
             <li class="nav-item">
-                <a href="#">Inscription</a>
+                <a href="../pages/inscription">Inscription</a>
             </li>
+
             <div class="nav-item-recherche">
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
