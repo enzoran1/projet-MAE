@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+function dynamicTitle()
+// Fonction permettant de rendre le title de chaque page dynamique 
+{
+    $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
+
+    explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
+    $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
+    if ($title === 'index') { // règle particulière pour la Homepage :
+        $title = 'Accueil';
+    }
+    $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
+    echo $title;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -5,17 +23,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php dynamicTitle()?></title>
     <link rel="stylesheet" href="../public/css/header.css">
-     <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
 </head>
 
 <body>
 
-<!-- debut de ma nav bar pour mobile -->
+    <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
-
-<!-- logo de ma navbar -->
         <a href="" class="nav-logo">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -35,29 +52,22 @@
                     <g id="Groupe_2" data-name="Groupe 2" transform="translate(0 0)" clip-path="url(#clip-path)">
                         <path id="Tracé_3" data-name="Tracé 3" d="M-306.772,169.037v26.032l-9.271-7.334a30.169,30.169,0,0,1-41.027-1.52,26.528,26.528,0,0,1,1.6-38.89,30.174,30.174,0,0,1,41.027,1.515,26.769,26.769,0,0,1,7.721,18.657c0,.525-.022,1.035-.048,1.54m-28.533-16.071c-8.313-.041-15.093,6.319-15.13,14.2s6.667,14.306,14.98,14.342,15.093-6.319,15.13-14.2v-.071c.016-7.859-6.688-14.25-14.98-14.271m-12.139-18.657c-3.384-7.145-12.236-10.338-19.774-7.13a14.179,14.179,0,0,0-8.835,12.812h17.842a35.028,35.028,0,0,0-10.67,13.261h-7.178v30.765h.005v11.057h-14.173V141.491h.038c-.016-.347-.027-.689-.027-1.04-.081-15.1,12.763-27.409,28.695-27.485,12.768-.061,24.057,7.834,27.759,19.417-.511-.02-1.017-.036-1.534-.036a38.184,38.184,0,0,0-12.149,1.964m-57.793-1.969a9.97,9.97,0,0,1-10.223-9.691,9.97,9.97,0,0,1,10.223-9.691,9.97,9.97,0,0,1,10.223,9.691,9.966,9.966,0,0,1-10.223,9.691m6.995,62.733h-13.99V139.991h13.99Z" transform="translate(445.591 -85.419)" fill="#ff5737" fill-rule="evenodd" />
                     </g>
-
                 </g>
             </svg>
         </a>
-
-<!-- construction a l'aide d'un svg du button accordéon -->
+        <!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button">
-
             <svg viewBox="0 0 100 80" widht="40" height="40">
-
                 <rect fill="#FFFFFF" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="30" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="60" width="100" height="5"></rect>
-
             </svg>
-
         </span>
 
-<!-- Item de ma navbar -->
+        <!-- Item de ma navbar -->
         <ul class="nav-menu">
-
             <li class="nav-item">
-                <a href="#">Accueil</a>
+                <a href="index">Accueil</a>
             </li>
             <li class="nav-item">
                 <a href="#">Découvrez l'IFA</a>
@@ -69,27 +79,27 @@
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item">
-                <a href="#">Compte</a>
+                <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item">
-                <a href="#">Inscription</a>
+                <a href="pages/inscription">Inscription</a>
             </li>
             <div class="nav-item-recherche">
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
                     <button type="submit"><img src="./public/css/image/icons8-search-24.png" alt=""></button>
                 </form>
-
             </div>
         </ul>
-
     </nav>
     <!--Fin de la nav bar mobile -->
 
-    <!-- navbar de la version tablett -->
+
+
+    <!-- navbar de la version tablette -->
     <nav class="navbar2" id="ma-navbar">
 
-<!-- logo de ma navbar -->
+        <!-- logo de ma navbar -->
         <a href="" class="nav-logo2">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                 <defs>
@@ -109,30 +119,24 @@
                     <g id="Groupe_2" data-name="Groupe 2" transform="translate(0 0)" clip-path="url(#clip-path)">
                         <path id="Tracé_3" data-name="Tracé 3" d="M-306.772,169.037v26.032l-9.271-7.334a30.169,30.169,0,0,1-41.027-1.52,26.528,26.528,0,0,1,1.6-38.89,30.174,30.174,0,0,1,41.027,1.515,26.769,26.769,0,0,1,7.721,18.657c0,.525-.022,1.035-.048,1.54m-28.533-16.071c-8.313-.041-15.093,6.319-15.13,14.2s6.667,14.306,14.98,14.342,15.093-6.319,15.13-14.2v-.071c.016-7.859-6.688-14.25-14.98-14.271m-12.139-18.657c-3.384-7.145-12.236-10.338-19.774-7.13a14.179,14.179,0,0,0-8.835,12.812h17.842a35.028,35.028,0,0,0-10.67,13.261h-7.178v30.765h.005v11.057h-14.173V141.491h.038c-.016-.347-.027-.689-.027-1.04-.081-15.1,12.763-27.409,28.695-27.485,12.768-.061,24.057,7.834,27.759,19.417-.511-.02-1.017-.036-1.534-.036a38.184,38.184,0,0,0-12.149,1.964m-57.793-1.969a9.97,9.97,0,0,1-10.223-9.691,9.97,9.97,0,0,1,10.223-9.691,9.97,9.97,0,0,1,10.223,9.691,9.966,9.966,0,0,1-10.223,9.691m6.995,62.733h-13.99V139.991h13.99Z" transform="translate(445.591 -85.419)" fill="#ff5737" fill-rule="evenodd" />
                     </g>
-
                 </g>
             </svg>
         </a>
 
-
-<!-- construction a l'aide d'un svg du button accordéon -->
+        <!-- construction a l'aide d'un svg du button accordéon -->
         <span class="nav-button2">
-
             <svg viewBox="0 0 100 80" widht="40" height="40">
-
                 <rect fill="#FFFFFF" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="30" width="100" height="5"></rect>
                 <rect fill="#FFFFFF" y="60" width="100" height="5"></rect>
-
             </svg>
-
         </span>
 
-<!-- Item de ma navbar -->
+        <!-- Item de ma navbar -->
         <ul class="nav-menu2">
 
             <li class="nav-item2">
-                <a href="#">Accueil</a>
+                <a href="index">Accueil</a>
             </li>
             <li class="nav-item2">
                 <a href="#">Découvrez l'IFA</a>
@@ -144,10 +148,10 @@
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Compte</a>
+                <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Inscription</a>
+                <a href="page/inscription">Inscription</a>
             </li>
 
             <div class="nav-item-recherche2">
@@ -156,13 +160,7 @@
                     <button type="submit"><img src="./public/css/image/icons8-search-24.png" alt=""></button>
                 </form>
             </div>
-
-
-
-
         </ul>
-
-
     </nav>
 
 
@@ -170,7 +168,7 @@
 
 
 
-<!-- navbar version ecranc pc -->
+    <!-- navbar version écran pc -->
     <nav class="navbar3">
         <a href="" class="navbarSvg1">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="250" height="110" viewBox="0 0 657.552 161.678">
@@ -191,7 +189,6 @@
                     <g id="Groupe_2" data-name="Groupe 2" transform="translate(0 0)" clip-path="url(#clip-path)">
                         <path id="Tracé_3" data-name="Tracé 3" d="M-306.772,169.037v26.032l-9.271-7.334a30.169,30.169,0,0,1-41.027-1.52,26.528,26.528,0,0,1,1.6-38.89,30.174,30.174,0,0,1,41.027,1.515,26.769,26.769,0,0,1,7.721,18.657c0,.525-.022,1.035-.048,1.54m-28.533-16.071c-8.313-.041-15.093,6.319-15.13,14.2s6.667,14.306,14.98,14.342,15.093-6.319,15.13-14.2v-.071c.016-7.859-6.688-14.25-14.98-14.271m-12.139-18.657c-3.384-7.145-12.236-10.338-19.774-7.13a14.179,14.179,0,0,0-8.835,12.812h17.842a35.028,35.028,0,0,0-10.67,13.261h-7.178v30.765h.005v11.057h-14.173V141.491h.038c-.016-.347-.027-.689-.027-1.04-.081-15.1,12.763-27.409,28.695-27.485,12.768-.061,24.057,7.834,27.759,19.417-.511-.02-1.017-.036-1.534-.036a38.184,38.184,0,0,0-12.149,1.964m-57.793-1.969a9.97,9.97,0,0,1-10.223-9.691,9.97,9.97,0,0,1,10.223-9.691,9.97,9.97,0,0,1,10.223,9.691,9.966,9.966,0,0,1-10.223,9.691m6.995,62.733h-13.99V139.991h13.99Z" transform="translate(445.591 -85.419)" fill="#ff5737" fill-rule="evenodd" />
                     </g>
-
                 </g>
                 <g id="Groupe_18" data-name="Groupe 18" transform="translate(186.042 60.822)">
                     <path id="Tracé_32" data-name="Tracé 32" d="M-66.46,462.96a7,7,0,0,1,7,7,7,7,0,0,1-7,7,7,7,0,0,1-7-7,7,7,0,0,1,7-7" transform="translate(530.97 -435.659)" fill="#ff5737" />
@@ -325,10 +322,9 @@
             </svg>
         </a>
 
-
         <ul class="nav-menu3">
             <li class="nav-item3">
-                <a href="">Accueil</a>
+                <a href="../index">Accueil</a>
             </li>
             <li class="nav-item3">
                 <a href="">Découvrez l'IFA</a>
@@ -342,8 +338,8 @@
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="">Compte</a>
-                <a href="">Inscription</a>
+                <a href="pages/connexion">Compte</a>
+                <a href="pages/inscription">Inscription</a>
             </div>
             <div class="nav-item-recherche3">
 
