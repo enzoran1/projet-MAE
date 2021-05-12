@@ -111,3 +111,11 @@ if(isset($_POST['submit']))
 
 
 
+<<<<<<< HEAD
+include '../inc/inc_top.php';
+
+include '../inc/inc_bottom.php';
+||||||| f295fad
+include '../inc/inc_top.php';
+=======
+>>>>>>> martin
