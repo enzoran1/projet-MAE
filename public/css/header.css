@@ -37,6 +37,7 @@ Début navbar mobile
     font-weight: bold;
     font-size: 1rem;
     
+    
 }
 .navbar a:hover{
     color: #ff5737;
@@ -74,6 +75,9 @@ Début navbar mobile
     text-align: center;
     padding-top: 15px;
 
+}
+.nav-item li{
+    padding-bottom: 20px;
 }
 .nav-item-recherche input{
     font-size: 110%;
