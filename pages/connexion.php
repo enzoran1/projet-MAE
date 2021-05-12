@@ -1,52 +1,78 @@
 <?php
-session_start();
-include '../inc/inc_top.php'; 
-include '../pages/cobdd.php';
+ob_start();
+require '../inc/inc_top.php'; 
 
 
-function testConnexion() 
-{ 
+
+
+if(isset($_POST['submit']))
+{
+ 
     if(
         !empty                  ($_POST['email']) 
         && !empty               ($_POST['mdp'])
     )
     { 
-        $yourEmail =            $_POST['email'];
-        $yourPassword =         password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+        require_once '../pages/cobdd.php'; 
+
+        $yourEmail          =    $_POST['email'];
+        $yourPassword       =    $_POST['mdp'];
 
         // 1ERE REQUETE : selectionne l'email
         $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='".$yourEmail."'");
         $queryUser->execute();
-        $count = $queryUser->rowCount();
+        $result = $queryUser->fetch();
 
-
-        // 2EME REQUETE : selectionne le mdp 
-        if($count > 0) 
+        // 2EME REQUETE : selectionne le mdp SI il reconnait le mail
+           if(!password_verify($yourPassword, $result['mdp']))
         { 
-            $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'");
-            // fonction pour deccrypter le mdp.... 
-            $queryPassword->execute();
-            $count2 = $queryPassword->rowCount();
-
-            if($count2 > 0) 
-            {   
-                $_SESSION['mail'] = $_POST['email'];
-                $_SESSION['mdp'] = $_POST['mdp'];
-                header('Location: ./dashboard.php'); // redirection vers dashboard
-            }
-            else
-            {
-                echo '<h2> Mdp incorrect </h2>';
-                session_destroy();
-            }
-        } 
-    }
-    else
-    { 
-        echo '<h2> Veuillez renseigner tous les champs</h2>';
-        session_destroy();
+            die('Mot de passe invalide');
+        }
+        else 
+        { 
+            ob_clean();
+            header('Location: dashboard.php');     
+        }    
     }
 }
+
+
+
+
+
+
+
+            // $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'"); // ON EN EST LA !!! 
+            // $queryPassword->execute();
+
+            // $resultPassword = $queryPassword->fetchAll();
+            // var_dump($resultPassword);
+
+            // $count2 = $queryPassword->rowCount();
+            // var_dump($count2);
+            // if($count2 > 0) 
+            // {   
+            //     $_SESSION['mail'] = $_POST['email'];
+            //     $_SESSION['mdp'] = $_POST['mdp'];
+            //     echo 'felicitations';
+            //     // header('Location: dashboard.php');
+            // }
+    //         }else
+    //         {
+    //             echo '<h2> Mot de passe incorrect </h2>';
+    //             session_destroy();
+    //         }
+    //     }
+    //     else
+    //     { 
+    //         echo 'Adresse e-mail invalide';
+    //     } 
+    // else
+    // { 
+    //     echo '<h2> Veuillez renseigner tous les champs</h2>';
+    //     session_destroy();
+    // }
+
 ?>
 
 
@@ -61,7 +87,7 @@ function testConnexion()
     </div>
     <div>
         <label for="password">
-            <input type="mdp" name="mdp" id="mdp" placeholder="mdp">
+            <input type="password" name="mdp" id="mdp" placeholder="mdp">
         </label>
     </div>
 
@@ -72,11 +98,8 @@ function testConnexion()
 <h2> <a href="../index.php"> Retour au menu </a> </h2>
 
 <?php 
-if(isset($_POST['submit']))
+
 { 
-    testConnexion();
-
-
     // $_POST['situations'] == 1        ?      $path = "inseleves"               :       $path = "insentreprise";
 } 
 

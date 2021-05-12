@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 function dynamicTitle()
 // Fonction permettant de rendre le title de chaque page dynamique 
@@ -14,7 +14,6 @@ function dynamicTitle()
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
     echo $title;
 }
-
 ?>
 
 <!DOCTYPE html>
