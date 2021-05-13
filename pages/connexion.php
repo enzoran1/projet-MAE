@@ -2,12 +2,15 @@
 ob_start();
 require '../inc/inc_top.php'; 
 
-
+if(!empty($_SESSION['email']))
+{ 
+    echo 'Vous êtes déjà connecté(e)';
+    die;
+}
 
 
 if(isset($_POST['submit']))
 {
- 
     if(
         !empty                  ($_POST['email']) 
         && !empty               ($_POST['mdp'])
@@ -31,17 +34,15 @@ if(isset($_POST['submit']))
         else 
         { 
             ob_clean();
+
+            $_SESSION['email'] = $result['email'];
+            $_SESSION['mdp'] = $result['mdp'];
+            $_SESSION['telephone'] = $result['telephone'];
+
             header('Location: dashboard.php');     
         }    
     }
 }
-
-
-
-
-
-
-
             // $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'"); // ON EN EST LA !!! 
             // $queryPassword->execute();
 
@@ -97,13 +98,6 @@ if(isset($_POST['submit']))
 
 <h2> <a href="../index.php"> Retour au menu </a> </h2>
 
-<?php 
-
-{ 
-    // $_POST['situations'] == 1        ?      $path = "inseleves"               :       $path = "insentreprise";
-} 
-
-?>
 
 
 
