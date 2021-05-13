@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+
 function dynamicTitle()
 // Fonction permettant de rendre le title de chaque page dynamique 
 {
@@ -8,7 +9,10 @@ function dynamicTitle()
 
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
     $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
-    if ($title === 'index') { // règle particulière pour la Homepage :
+
+    if ($title === 'index') 
+    // règle particulière pour la Homepage :
+    { 
         $title = 'Accueil';
     }
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
@@ -324,7 +328,7 @@ function dynamicTitle()
 
         <ul class="nav-menu3">
             <li class="nav-item3">
-                <a href="../index">Accueil</a>
+                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
             </li>
             <li class="nav-item3">
                 <a href="">Découvrez l'IFA</a>
