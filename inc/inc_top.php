@@ -340,6 +340,7 @@ function dynamicTitle()
             <div class="nav-item3-right">
                 <a href="pages/connexion">Compte</a>
                 <a href="pages/inscription">Inscription</a>
+               <?php if(!empty($_SESSION['email'])){ echo '<a href="pages/deconnexion">Deconnexion</a>'; } ?>
             </div>
             <div class="nav-item-recherche3">
 
@@ -351,9 +352,6 @@ function dynamicTitle()
             </div>
         </div>
     </nav>
-
-
-
 
     <script src="../public/script/script.js"></script>
 </body>
