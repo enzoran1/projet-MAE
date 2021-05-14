@@ -273,7 +273,7 @@ function dynamicTitle()
             </svg>
         </a>
 
-        <a href="" class="navbarSvg3">
+        <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>" class="navbarSvg3">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="140" viewBox="0 0 657.552 161.678">
                 <defs>
                     <clipPath id="clip-path">
@@ -340,8 +340,8 @@ function dynamicTitle()
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="pages/connexion">Compte</a>
-                <a href="pages/inscription">Inscription</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
                <?php echo !empty($_SESSION['email']) ? '<a href="pages/deconnexion">Deconnexion</a>' : ''; ?>
             </div>
             <div class="nav-item-recherche3">
