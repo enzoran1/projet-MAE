@@ -329,7 +329,7 @@ function dynamicTitle()
                 <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '/decouverte' : 'pages/decouverte' ?>">Découvrez l'IFA</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/decouverte' : '/pages/decouverte' ?>">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
                 <a href="">Association</a>
