@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 function dynamicTitle()
 // Fonction permettant de rendre le title de chaque page dynamique 
 {
@@ -34,7 +33,6 @@ function dynamicTitle()
 </head>
 
 <body>
-
     <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
         <a href="" class="nav-logo">
@@ -331,7 +329,7 @@ function dynamicTitle()
                 <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="">Découvrez l'IFA</a>
+                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '/decouverte' : 'pages/decouverte' ?>">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
                 <a href="">Association</a>
@@ -344,7 +342,7 @@ function dynamicTitle()
             <div class="nav-item3-right">
                 <a href="pages/connexion">Compte</a>
                 <a href="pages/inscription">Inscription</a>
-               <?php if(!empty($_SESSION['email'])){ echo '<a href="pages/deconnexion">Deconnexion</a>'; } ?>
+               <?php echo !empty($_SESSION['email']) ? '<a href="pages/deconnexion">Deconnexion</a>' : ''; ?>
             </div>
             <div class="nav-item-recherche3">
 
