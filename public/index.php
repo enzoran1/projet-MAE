@@ -23,7 +23,6 @@ require './inc/inc_top.php';
         Ipsam repudiandae pariatur architecto facere minus eveniet, nihil quidem, deserunt officia sit quae? Alias soluta tempora aut in iste officiis ratione omnis, impedit necessitatibus sequi saepe dolores odio praesentium quo?</p>
 
 </div>
-
 <div class="carte">
     <div class="carte-eleves">
 
