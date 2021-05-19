@@ -2,37 +2,12 @@
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
 
-$requete = $bdd->prepare('SELECT * FROM situations');
-$requete->execute();
-$situations = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-
-
-
-if (!empty($_POST)) {
-
-    if (
-        isset($_POST['email'], $_POST['password'], $_POST['tel']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['tel'])
-    ) {
-
-
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-            die("l'adresse email est incorrecte");
-        }
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_ARGON2ID);
-        $tel = strip_tags($_POST['tel']);
-
-        $requete = $bdd->prepare('INSERT INTO user(mail, mdp, telephone) VALUES(?,?,?)');
-        $requete->execute(array($email, $password, $tel));
-    }
+if (!empty($_SESSION['email'])) {
+    echo 'Vous êtes déjà connecté(e)';
+    die;
 }
-
-
-
-
 ?>
-
 
 <div class="carte">
     <div class="carte-eleves">
