@@ -7,7 +7,7 @@ function dynamicTitle()
     $title = $_SERVER['PHP_SELF']; // renvoi projetifa/index.php
 
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
-    $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
+    $title = str_replace(array('/', '.php', 'pages'), '', $title); // remplacement des arrays par ''
     if ($title === 'index') { // règle particulière pour la Homepage :
         $title = 'Accueil';
     }
@@ -70,19 +70,19 @@ function dynamicTitle()
                 <a href="index">Accueil</a>
             </li>
             <li class="nav-item">
-                <a href="#">Découvrez l'IFA</a>
+                <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item">
                 <a href="#">Association</a>
             </li>
             <li class="nav-item">
-                <a href="#">Réseau</a>
+                <a href="../pages/reseau">Réseau</a>
             </li>
             <li class="nav-item">
-                <a href="pages/connexion">Compte</a>
+                <a href="../pages/connexion">Compte</a>
             </li>
             <li class="nav-item">
-                <a href="pages/inscription">Inscription</a>
+                <a href="../pages/inscription">Inscription</a>
             </li>
             <div class="nav-item-recherche">
                 <form action="/">
@@ -139,19 +139,19 @@ function dynamicTitle()
                 <a href="index">Accueil</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Découvrez l'IFA</a>
+                <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item2">
                 <a href="#">Association</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Réseau</a>
+                <a href="../pages/reseau">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="pages/connexion">Compte</a>
+                <a href="../pages/connexion">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="page/inscription">Inscription</a>
+                <a href="../pages/inscription">Inscription</a>
             </li>
 
             <div class="nav-item-recherche2">
@@ -327,19 +327,20 @@ function dynamicTitle()
                 <a href="../index">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="">Découvrez l'IFA</a>
+                <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
                 <a href="">Association</a>
             </li>
             <li class="nav-item3">
-                <a href="">Réseau</a>
+                <a href="../pages/reseau">Réseau</a>
             </li>
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="pages/connexion">Compte</a>
-                <a href="pages/inscription">Inscription</a>
+                <a href="../pages/connexion">Compte</a>
+                <a href="../pages/inscription">Inscription</a>
+                <?php !empty($_SESSION['email']) ? '<a href="pages/deconnexion">Deconnexion</a>' : ''; ?>
             </div>
             <div class="nav-item-recherche3">
 

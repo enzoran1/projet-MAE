@@ -29,7 +29,7 @@
         <div class="footer-left-text">
             <p>4 rue Saint Charles,</p>
             <p>57000 METZ</p>
-            <p>adressemai@gmail.com</p>
+            <p>agencemetz@ifa-formation.fr</p>
         </div>
     </div>
     <div class="footer-center">

@@ -2,6 +2,7 @@
 
 include '../inc/inc_top.php';
 
+
 ?>
 
 <div class="ban">

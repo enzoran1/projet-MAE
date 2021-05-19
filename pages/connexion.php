@@ -1,13 +1,20 @@
 <?php
 ob_start();
-require '../inc/inc_top.php'; 
+require '../inc/inc_top.php';
 
 
+
+if(!empty($_SESSION['email']))
+{ 
+    echo 'Vous êtes déjà connecté(e)';
+    ob_clean();
+    header('Location: dashboard.php');
+    die;
+}
 
 
 if(isset($_POST['submit']))
 {
- 
     if(
         !empty                  ($_POST['email']) 
         && !empty               ($_POST['mdp'])
@@ -31,47 +38,16 @@ if(isset($_POST['submit']))
         else 
         { 
             ob_clean();
+
+            $_SESSION['email'] = $result['email'];
+            $_SESSION['mdp'] = $result['mdp'];
+            $_SESSION['telephone'] = $result['telephone'];
+
             header('Location: dashboard.php');     
         }    
     }
 }
 
-
-
-
-
-
-
-            // $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'"); // ON EN EST LA !!! 
-            // $queryPassword->execute();
-
-            // $resultPassword = $queryPassword->fetchAll();
-            // var_dump($resultPassword);
-
-            // $count2 = $queryPassword->rowCount();
-            // var_dump($count2);
-            // if($count2 > 0) 
-            // {   
-            //     $_SESSION['mail'] = $_POST['email'];
-            //     $_SESSION['mdp'] = $_POST['mdp'];
-            //     echo 'felicitations';
-            //     // header('Location: dashboard.php');
-            // }
-    //         }else
-    //         {
-    //             echo '<h2> Mot de passe incorrect </h2>';
-    //             session_destroy();
-    //         }
-    //     }
-    //     else
-    //     { 
-    //         echo 'Adresse e-mail invalide';
-    //     } 
-    // else
-    // { 
-    //     echo '<h2> Veuillez renseigner tous les champs</h2>';
-    //     session_destroy();
-    // }
 
 ?>
 
@@ -82,12 +58,12 @@ if(isset($_POST['submit']))
 
 <div>
         <label for="email">
-            <input type="email" name="email" id="email" placeholder="email">
+            <input type="email" name="email" id="email" placeholder="Email">
         </label>
     </div>
     <div>
         <label for="password">
-            <input type="password" name="mdp" id="mdp" placeholder="mdp">
+            <input type="password" name="mdp" id="mdp" placeholder="Mot de passe">
         </label>
     </div>
 
@@ -96,16 +72,6 @@ if(isset($_POST['submit']))
 </form>
 
 <h2> <a href="../index.php"> Retour au menu </a> </h2>
-
-<?php 
-
-{ 
-    // $_POST['situations'] == 1        ?      $path = "inseleves"               :       $path = "insentreprise";
-} 
-
-?>
-
-
 
 
 

@@ -63,17 +63,17 @@ if (!empty($_POST['submit']))
 
     <div>
         <label for="email">
-            <input type="email" name="email" id="email" placeholder="email">
+            <input type="email" name="email" id="email" placeholder="Email">
         </label>
     </div>
     <div>
         <label for="password">
-            <input type="password" name="password" id="password" placeholder="password">
+            <input type="password" name="password" id="password" placeholder="Mot de passe">
         </label>
     </div>
     <div>
         <label for="tel">
-            <input type="text" name="tel" id="tel" placeholder="tel">
+            <input type="text" name="tel" id="tel" placeholder="Téléphone">
         </label>
     </div>
 
@@ -93,3 +93,4 @@ if (!empty($_POST['submit']))
 
 </form>
 
+<?php include '../inc/inc_bottom.php'; ?>
