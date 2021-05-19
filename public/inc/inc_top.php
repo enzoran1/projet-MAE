@@ -326,30 +326,28 @@ function dynamicTitle()
 
         <ul class="nav-menu3">
             <li class="nav-item3">
-                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
+                <a href="/index">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/decouverte' : '/pages/decouverte' ?>">Découvrez l'IFA</a>
+                <a href="/pages/decouverte">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
-                <a href="">Association</a>
+                <a href="/pages/associations">Association</a>
             </li>
             <li class="nav-item3">
-                <a href="">Réseau</a>
+                <a href="/pages/reseau">Réseau</a>
             </li>
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
+                <a href="/pages/connexion">Compte</a>
+                <a href="/pages/inscription">Inscription</a>
                 <?php 
 
                 if(!empty($_SESSION['email']))
-                { 
-                    echo '<a href="';
-                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
-                    echo '">Deconnexion</a> ';
-                }?> 
+                {
+                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php
+                } ?>
             </div>
 
             <div class="nav-item-recherche3">
@@ -363,7 +361,7 @@ function dynamicTitle()
         </div>
     </nav>
 
-    <script src="../public/script/script.js"></script>
+    <script src="assets/script/script.js"></script>
 </body>
 
 </html>
