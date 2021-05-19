@@ -1,8 +1,8 @@
 # page index :
-    DirectoryIndex index.php
+    DirectoryIndex index.php 
 
-# page d'erreurs :
-    ErrorDocument 404 /errors/404.php
+# page d'erreurs, ne fonctionne pas :
+    ErrorDocument 404 404.php
 
 # règles de réecriture d'URL : 
 

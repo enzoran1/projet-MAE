@@ -1,5 +1,5 @@
 <?php
-include 'inc/inc_top.php';
+require './inc/inc_top.php';
 ?>
 
 <div class="ban">
@@ -45,4 +45,4 @@ include 'inc/inc_top.php';
 </div>
 
 
-<?php include 'inc/inc_bottom.php'; ?>
+<?php require './inc/inc_bottom.php'; ?>
