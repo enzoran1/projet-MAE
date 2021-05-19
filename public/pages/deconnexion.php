@@ -4,8 +4,9 @@ include '../inc/inc_top.php';
 // débug ici
 session_destroy();
 
-header('Location: /index');
+
+sleep(2);
+$url = 'http://index';
+get_headers($url);
 exit;
 
-
-// directement sur l'index. Mettre if(isset($_SESSIOOn)) -> Destroy 
