@@ -5,6 +5,8 @@ require '../inc/inc_top.php';
 if(!empty($_SESSION['email']))
 { 
     echo 'Vous êtes déjà connecté(e)';
+    ob_clean();
+    header('Location: dashboard.php');
     die;
 }
 
@@ -43,36 +45,6 @@ if(isset($_POST['submit']))
         }    
     }
 }
-            // $queryPassword = $bdd->prepare("SELECT * FROM user WHERE mdp ='".$yourPassword."'"); // ON EN EST LA !!! 
-            // $queryPassword->execute();
-
-            // $resultPassword = $queryPassword->fetchAll();
-            // var_dump($resultPassword);
-
-            // $count2 = $queryPassword->rowCount();
-            // var_dump($count2);
-            // if($count2 > 0) 
-            // {   
-            //     $_SESSION['mail'] = $_POST['email'];
-            //     $_SESSION['mdp'] = $_POST['mdp'];
-            //     echo 'felicitations';
-            //     // header('Location: dashboard.php');
-            // }
-    //         }else
-    //         {
-    //             echo '<h2> Mot de passe incorrect </h2>';
-    //             session_destroy();
-    //         }
-    //     }
-    //     else
-    //     { 
-    //         echo 'Adresse e-mail invalide';
-    //     } 
-    // else
-    // { 
-    //     echo '<h2> Veuillez renseigner tous les champs</h2>';
-    //     session_destroy();
-    // }
 
 ?>
 

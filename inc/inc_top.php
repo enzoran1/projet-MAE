@@ -342,8 +342,17 @@ function dynamicTitle()
             <div class="nav-item3-right">
                 <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
                 <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
-               <?php echo !empty($_SESSION['email']) ? '<a href="pages/deconnexion">Deconnexion</a>' : ''; ?>
+                <?php 
+
+                if(!empty($_SESSION['email']))
+                { 
+                    echo '<a href="';
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
+                    echo '">Deconnexion</a> ';
+                }?> 
             </div>
+
             <div class="nav-item-recherche3">
 
                 <form action="/">

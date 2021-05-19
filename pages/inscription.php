@@ -1,8 +1,16 @@
 <?php
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
-?>
 
+
+if(!empty($_SESSION['email']))
+{ 
+    echo 'Vous êtes déjà connecté(e)';
+    ob_clean();
+    header('Location: dashboard.php');
+    die;
+}
+?>
 
 <div class="carte">
     <div class="carte-eleves">
