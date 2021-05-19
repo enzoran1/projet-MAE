@@ -8,7 +8,10 @@ function dynamicTitle()
 
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
     $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
-    if ($title === 'index') { // règle particulière pour la Homepage :
+
+    if ($title === 'index') 
+    // règle particulière pour la Homepage :
+    { 
         $title = 'Accueil';
     }
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
@@ -31,7 +34,6 @@ function dynamicTitle()
 </head>
 
 <body>
-
     <!-- debut de la nav bar pour mobile -->
     <nav class="navbar" id="ma-navbar">
         <a href="" class="nav-logo">
@@ -68,13 +70,7 @@ function dynamicTitle()
         <!-- Item de ma navbar -->
         <ul class="nav-menu">
             <li class="nav-item">
-<<<<<<< HEAD
-                <a href="../index">Accueil</a>
-||||||| f295fad
-                <a href="#">Accueil</a>
-=======
                 <a href="index">Accueil</a>
->>>>>>> martin
             </li>
             <li class="nav-item">
                 <a href="#">Découvrez l'IFA</a>
@@ -89,13 +85,7 @@ function dynamicTitle()
                 <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-                <a href="../pages/inscription">Inscription</a>
-||||||| f295fad
-                <a href="#">Inscription</a>
-=======
                 <a href="pages/inscription">Inscription</a>
->>>>>>> martin
             </li>
 
             <div class="nav-item-recherche">
@@ -285,7 +275,7 @@ function dynamicTitle()
             </svg>
         </a>
 
-        <a href="" class="navbarSvg3">
+        <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>" class="navbarSvg3">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="140" viewBox="0 0 657.552 161.678">
                 <defs>
                     <clipPath id="clip-path">
@@ -338,10 +328,10 @@ function dynamicTitle()
 
         <ul class="nav-menu3">
             <li class="nav-item3">
-                <a href="../index">Accueil</a>
+                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="">Découvrez l'IFA</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/decouverte' : '/pages/decouverte' ?>">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
                 <a href="">Association</a>
@@ -352,9 +342,18 @@ function dynamicTitle()
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="pages/connexion">Compte</a>
-                <a href="pages/inscription">Inscription</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
+                <?php 
+
+                if(!empty($_SESSION['email']))
+                { 
+                    echo '<a href="';
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
+                    echo '">Deconnexion</a> ';
+                }?> 
             </div>
+
             <div class="nav-item-recherche3">
 
                 <form action="/">
@@ -365,9 +364,6 @@ function dynamicTitle()
             </div>
         </div>
     </nav>
-
-
-
 
     <script src="../public/script/script.js"></script>
 </body>

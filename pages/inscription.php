@@ -1,8 +1,14 @@
 <?php
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
-?>
 
+
+if(!empty($_SESSION['email']))
+{ 
+    echo 'Vous êtes déjà connecté(e)';
+    die;
+}
+?>
 
 <div class="carte">
     <div class="carte-eleves">
