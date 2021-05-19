@@ -348,7 +348,6 @@ function dynamicTitle()
                 { 
                     echo '<a href="';
                     echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
-                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
                     echo '">Deconnexion</a> ';
                 }?> 
             </div>
