@@ -9,9 +9,9 @@ function dynamicTitle()
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
     $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
 
-    if ($title === 'index') 
+    if ($title === 'index')
     // règle particulière pour la Homepage :
-    { 
+    {
         $title = 'Accueil';
     }
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
@@ -30,7 +30,7 @@ function dynamicTitle()
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="../public/css/footer.css">
-    <link rel="stylesheet" href="../public/css/modal.css">
+    <link rel="stylesheet" href="../public/css/formulaire.css">
 </head>
 
 <body>
@@ -344,14 +344,13 @@ function dynamicTitle()
             <div class="nav-item3-right">
                 <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
                 <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
-                <?php 
+                <?php
 
-                if(!empty($_SESSION['email']))
-                { 
+                if (!empty($_SESSION['email'])) {
                     echo '<a href="';
-                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion';
                     echo '">Deconnexion</a> ';
-                }?> 
+                } ?>
             </div>
 
             <div class="nav-item-recherche3">

@@ -43,32 +43,27 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-<h1>Connectez-vous pour accèder à de nombreuses fonctionnalités</h1>
 
-<form action="" method="POST">
 
-    <div>
-        <label for="email">
-            <input type="email" name="email" id="email" placeholder="email">
-        </label>
+<form action="" method="POST" class="formulaire">
+    <div class="formulaire__container">
+        <h3>Connexion</h3>
+        <div class="formulaire__contenue">
+            <label for="email">
+                <input type="email" name="email" id="email" placeholder="email">
+            </label>
+        </div>
+        <div class="formulaire__contenue">
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="password">
+            </label>
+        </div>
+
+
+
+
+
+        <button type="submit" name="submit" value='submit'>Envoyer</button>
     </div>
-    <div>
-        <label for="password">
-            <input type="password" name="mdp" id="mdp" placeholder="mdp">
-        </label>
-    </div>
-
-    <button type="submit" name="submit" value='submit'>Envoyer</button>
 
 </form>
-
-<h2> <a href="../index.php"> Retour au menu </a> </h2>
-
-
-
-
-
-
-
-
-?>
