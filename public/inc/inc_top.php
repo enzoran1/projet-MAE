@@ -150,10 +150,10 @@ function dynamicTitle()
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="pages/connexion">Compte</a>
+                <a href="./pages/connexion">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="page/inscription">Inscription</a>
+                <a href="./page/inscription">Inscription</a>
             </li>
 
             <div class="nav-item-recherche2">
@@ -273,7 +273,7 @@ function dynamicTitle()
             </svg>
         </a>
 
-        <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>" class="navbarSvg3">
+        <a href="/index" class="navbarSvg3">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="140" viewBox="0 0 657.552 161.678">
                 <defs>
                     <clipPath id="clip-path">
