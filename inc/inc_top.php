@@ -23,7 +23,7 @@ function dynamicTitle()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php dynamicTitle()?></title>
+    <title><?php dynamicTitle() ?></title>
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/main.css">
     <link rel="stylesheet" href="../public/css/footer.css">
@@ -68,13 +68,7 @@ function dynamicTitle()
         <!-- Item de ma navbar -->
         <ul class="nav-menu">
             <li class="nav-item">
-<<<<<<< HEAD
-                <a href="../index">Accueil</a>
-||||||| f295fad
-                <a href="#">Accueil</a>
-=======
                 <a href="index">Accueil</a>
->>>>>>> martin
             </li>
             <li class="nav-item">
                 <a href="#">Découvrez l'IFA</a>
@@ -89,13 +83,7 @@ function dynamicTitle()
                 <a href="pages/connexion">Compte</a>
             </li>
             <li class="nav-item">
-<<<<<<< HEAD
-                <a href="../pages/inscription">Inscription</a>
-||||||| f295fad
-                <a href="#">Inscription</a>
-=======
                 <a href="pages/inscription">Inscription</a>
->>>>>>> martin
             </li>
 
             <div class="nav-item-recherche">
