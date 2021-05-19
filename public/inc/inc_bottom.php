@@ -32,6 +32,8 @@
             <p>adressemai@gmail.com</p>
         </div>
     </div>
+
+
     <div class="footer-center">
         <div class="footer-center-titre">
             <h3>Suivez-nous</h3>
@@ -43,6 +45,9 @@
             <img src="../assets/css/image/icons8-play-button-48.png" alt="">
         </div>
     </div>
+
+
+
     <div class="footer-right">
         <div class="footer-right-liens">
             <a href="">Conditions d'utilisation</a>
@@ -51,7 +56,12 @@
 
         </div>
     </div>
+
+
 </footer>
+
+
+
 <div class="footer-bottom-copy">
     <a href="">© Tous droits réservés - IFA - 2021</a>
 </div>

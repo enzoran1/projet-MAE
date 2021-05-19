@@ -3,8 +3,7 @@ include '../inc/inc_top.php';
 include '../pages/cobdd.php';
 
 
-if(!empty($_SESSION['email']))
-{ 
+if (!empty($_SESSION['email'])) {
     echo 'Vous êtes déjà connecté(e)';
     die;
 }
@@ -23,4 +22,5 @@ if(!empty($_SESSION['email']))
         <a href="insentreprise.php">Voir</a>
 
     </div>
-</div>      
+</div>
+<?php include '../inc/inc_bottom.php' ?>

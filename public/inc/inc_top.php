@@ -9,9 +9,9 @@ function dynamicTitle()
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
     $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
 
-    if ($title === 'index') 
+    if ($title === 'index')
     // règle particulière pour la Homepage :
-    { 
+    {
         $title = 'Accueil';
     }
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
@@ -26,10 +26,23 @@ function dynamicTitle()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD:public/inc/inc_top.php
     <title><?php dynamicTitle()?></title>
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/footer.css">
+||||||| 317cc1f:inc/inc_top.php
+    <title><?php dynamicTitle()?></title>
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
+=======
+    <title><?php dynamicTitle() ?></title>
+    <link rel="stylesheet" href="../public/css/header.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/formulaire.css">
+>>>>>>> enzo:inc/inc_top.php
 </head>
 
 <body>
@@ -86,6 +99,7 @@ function dynamicTitle()
             <li class="nav-item">
                 <a href="pages/inscription">Inscription</a>
             </li>
+
             <div class="nav-item-recherche">
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
@@ -340,14 +354,39 @@ function dynamicTitle()
         </ul>
         <div>
             <div class="nav-item3-right">
+<<<<<<< HEAD:public/inc/inc_top.php
                 <a href="/pages/connexion">Compte</a>
                 <a href="/pages/inscription">Inscription</a>
                 <?php 
+||||||| 317cc1f:inc/inc_top.php
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
+                <?php 
+=======
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
+                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
+                <?php
+>>>>>>> enzo:inc/inc_top.php
 
+<<<<<<< HEAD:public/inc/inc_top.php
                 if(!empty($_SESSION['email']))
                 {
                     ?> <a href="/pages/deconnexion">Déconnexion</a> <?php
                 } ?>
+||||||| 317cc1f:inc/inc_top.php
+                if(!empty($_SESSION['email']))
+                { 
+                    echo '<a href="';
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
+                    echo '">Deconnexion</a> ';
+                }?> 
+=======
+                if (!empty($_SESSION['email'])) {
+                    echo '<a href="';
+                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion';
+                    echo '">Deconnexion</a> ';
+                } ?>
+>>>>>>> enzo:inc/inc_top.php
             </div>
 
             <div class="nav-item-recherche3">

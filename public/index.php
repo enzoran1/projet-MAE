@@ -10,11 +10,19 @@ require './inc/inc_top.php';
     </div>
     <div class="btn1">
         <div class="btn">
+
             <a href="pages/inscription">Inscription</a>
             <a href="pages/connexion">Connexion</a>
+
         </div>
     </div>
 </div>
+
+
+
+
+
+
 
 <div class="titre-text">
 
