@@ -6,6 +6,6 @@ session_destroy();
 echo 'Vous êtes déconnecté';
 sleep(1);
 ob_clean();
-header('Location: ../index.php');
+header('Location: ../pages/index.php');
 
 

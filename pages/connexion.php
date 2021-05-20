@@ -1,14 +1,14 @@
 <?php
 ob_start();
 require '../inc/inc_top.php';
+require_once '../pages/cobdd.php'; 
 
 
-
-if(!empty($_SESSION['email']))
+if(!empty($_SESSION['mail']))
 { 
     echo 'Vous êtes déjà connecté(e)';
     ob_clean();
-    header('Location: dashboard.php');
+    header('Location: ../pages/dashboard.php');
     die;
 }
 
@@ -16,22 +16,22 @@ if(!empty($_SESSION['email']))
 if(isset($_POST['submit']))
 {
     if(
-        !empty                  ($_POST['email']) 
+        !empty                  ($_POST['mail']) 
         && !empty               ($_POST['mdp'])
     )
     { 
-        require_once '../pages/cobdd.php'; 
+        //require_once '../pages/cobdd.php'; 
 
-        $yourEmail          =    $_POST['email'];
-        $yourPassword       =    $_POST['mdp'];
+        $mail      =    $_POST['mail'];
+        $mdp       =    $_POST['mdp'];
 
         // 1ERE REQUETE : selectionne l'email
-        $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='".$yourEmail."'");
+        $queryUser = $bdd->prepare("SELECT * FROM user WHERE mail='".$mail."'");
         $queryUser->execute();
         $result = $queryUser->fetch();
 
         // 2EME REQUETE : selectionne le mdp SI il reconnait le mail
-           if(!password_verify($yourPassword, $result['mdp']))
+           if(password_verify($mdp, $result['mdp'])) // LE POINT D'EXCLAMATION A ENLEVER
         { 
             die('Mot de passe invalide');
         }
@@ -39,11 +39,11 @@ if(isset($_POST['submit']))
         { 
             ob_clean();
 
-            $_SESSION['email'] = $result['email'];
+            $_SESSION['mail'] = $result['mail'];
             $_SESSION['mdp'] = $result['mdp'];
             $_SESSION['telephone'] = $result['telephone'];
 
-            header('Location: dashboard.php');     
+            header('Location: ../pages/dashboard.php');     
         }    
     }
 }
@@ -57,8 +57,8 @@ if(isset($_POST['submit']))
 <form action="" method="POST">
 
 <div>
-        <label for="email">
-            <input type="email" name="email" id="email" placeholder="Email">
+        <label for="mail">
+            <input type="email" name="mail" id="mail" placeholder="Email">
         </label>
     </div>
     <div>

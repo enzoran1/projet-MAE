@@ -8,7 +8,7 @@ include '../inc/inc_top.php';
 
 <ul>
     <li>
-        Adresse E-mail :<?= $_SESSION['email'] ?>
+        Adresse E-mail :<?= $_SESSION['mail'] ?>
     </li>
     <li>
         Votre mot de passe : <?= $_SESSION['mdp'] ?>
@@ -18,4 +18,6 @@ include '../inc/inc_top.php';
     </li>
 </ul>
 
-<?php include 'inc/inc_bottom.php'; ?>
+<h2> <a href="../pages/deconnexion.php"> Deconnexion </a> </h2>
+
+<?php include '../inc/inc_bottom.php'; ?>

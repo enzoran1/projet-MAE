@@ -9,37 +9,38 @@ if (!empty($_POST['submit']))
 { // On vérifie que le submit est lancé et que tous les champs sont remplis 
 
     if (
-            !empty          ($_POST['email']) 
-            && !empty       ($_POST['email']) 
-            && !empty       ($_POST['password']) 
+            !empty          ($_POST['mail']) 
+            && !empty       ($_POST['mail']) 
+            && !empty       ($_POST['mdp']) 
             //&& !empty       ($_POST['civilite'])
-            && !empty       ($_POST['nom'])
-            && !empty       ($_POST['prenom'])
-            && !empty       ($_POST['tel'])
-            && !empty       ($_POST['entreprise'])
+            //&& !empty       ($_POST['nom'])
+            //&& !empty       ($_POST['prenom'])
+            && !empty       ($_POST['telephone'])
+            //&& !empty       ($_POST['nom_entreprise'])
             //&& !empty       ($_POST['categorie'])
-            && !empty       ($_POST['secteur'])
-            && !empty       ($_POST['adresse'])
-            && !empty       ($_POST['postal'])
-            && !empty       ($_POST['ville'])
+            && !empty       ($_POST['titre'])
+            && !empty       ($_POST['site_entreprise'])
+            && !empty       ($_POST['id_ville'])
+            && !empty       ($_POST['cp_ville'])
+            && !empty       ($_POST['nom_ville'])
         ) 
     {
 
-        $email = $_POST['email'];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $tel = $_POST['tel'];
+        $mail = $_POST['mail'];
+        $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
+        $telephone = $_POST['telephone'];
         //$civilite = $_POST['civilite'];        
-        $nom = $_POST['nom'];
-        $prenom = $_POST['prenom'];
-        $entreprise = $_POST['entreprise'];
+        //$nom = $_POST['nom'];
+        //$prenom = $_POST['prenom'];
+        //$nom_entreprise = $_POST['nom_entreprise'];
         //$categorie = $_POST['categorie'];
-        $secteur = $_POST['secteur'];
-        $site = $_POST['site'];
-        $adresse = $_POST['adresse'];
-        $postal = $_POST['postal'];
-        $ville = $_POST['ville'];
+        $titre = $_POST['titre'];
+        $site_entreprise = $_POST['site_entreprise'];
+        $id_ville = $_POST['id_ville'];
+        $cp_ville = $_POST['cp_ville'];
+        $nom_ville = $_POST['nom_ville'];
 
-        $requestEmailExist = $bdd->prepare("SELECT * FROM user WHERE email ='".$email."'");
+        $requestEmailExist = $bdd->prepare("SELECT * FROM user WHERE mail ='".$mail."'");
         $requestEmailExist->execute();;
         $count = $requestEmailExist->rowCount(); // renvoi 0 si l'user n'existe pas... 1 s'il existe
 
@@ -54,20 +55,20 @@ if (!empty($_POST['submit']))
         { 
             // dans le cas ou count est égal à 0, donc nouvel email on continue
             $requete = $bdd->prepare(
-                'INSERT INTO user(email, mdp, /*civilite,*/telephone, nom, prenom, nom_entreprise, /*categorie,*/ titre, site_entreprise, id_ville, cp_ville, nom_ville) 
-                VALUES(?,?,?,?,?,?,?,?,?,?,?)'
+                'INSERT INTO user(mail, mdp, /*civilite,*/telephone, /*nom, prenom, nom_entreprise, categorie,*/ titre, site_entreprise, id_ville, cp_ville, nom_ville) 
+                VALUES(?,?,?,?,?,?,?,?)'
             );
 
-            $requete->execute(array($email, $password, $tel, /*$civilite,*/$nom, $prenom, $entreprise, /*$categorie,*/ $secteur, $site, $adresse, $postal, $ville)); 
+            $requete->execute(array($mail, $mdp, $telephone, /*$civilite,$nom, $prenom, $nom_entreprise, $categorie,*/ $titre, $site_entreprise, $id_ville, $cp_ville, $nom_ville)); 
 
-            $_SESSION['email'] = $email;
+            $_SESSION['mail'] = $mail;
 
             
 
             
             
             echo 'Vous êtes enregistré en tant que recruteur. Félicitations ! Veuillez maintenant vous connecter
-            en cliquant <a href="connexion"> ici </a>';
+            en cliquant <a href="../pages/connexion"> ici </a>';
             session_destroy();
         }
     }   
@@ -92,7 +93,7 @@ if (!empty($_POST['submit']))
         <option value="Mme">Mme</option>
         </select>
         </form>
-    </div>  -->
+    </div>  
 
     <div>
         <label for="nom">
@@ -104,30 +105,30 @@ if (!empty($_POST['submit']))
         <label for="prenom">
             <input type="text" name="prenom" id="prenom" placeholder="Prénom">
         </label>
-    </div>
+    </div> -->
 
     <div>
         <label for="tel">
-            <input type="text" name="tel" id="tel" placeholder="Téléphone">
+            <input type="text" name="telephone" id="telephone" placeholder="Téléphone">
         </label>
     </div>
 
     <div>
         <label for="email">
-            <input type="email" name="email" id="email" placeholder="Email">
+            <input type="email" name="mail" id="mail" placeholder="Email">
         </label>
     </div>
     <div>
         <label for="password">
-            <input type="password" name="password" id="password" placeholder="Mot de passe">
+            <input type="password" name="mdp" id="mdp" placeholder="Mot de passe">
         </label>
     </div>
-
+<!--
     <div>
         <label for="entreprise">
-            <input type="text" name="entreprise" id="entreprise" placeholder="Nom de l'entreprise">
+            <input type="text" name="nom_entreprise" id="nom_entreprise" placeholder="Nom de l'entreprise">
         </label>
-    </div>
+    </div> -->
 <!--
     <div>
         <form>
@@ -144,31 +145,31 @@ if (!empty($_POST['submit']))
 
     <div>
         <label for="secteur">
-            <input type="text" name="secteur" id="secteur" placeholder="Secteur d'activité">
+            <input type="text" name="titre" id="titre" placeholder="Secteur d'activité">
         </label>
     </div>
 
     <div>
         <label for="site">
-            <input type="text" name="site" id="site" placeholder="Site web">
+            <input type="text" name="site_entreprise" id="site_entreprise" placeholder="Site web">
         </label>
     </div>
 
     <div>
         <label for="adresse">
-            <input type="text" name="adresse" id="adresse" placeholder="Adresse">
+            <input type="text" name="id_ville" id="id_ville" placeholder="Adresse">
         </label>
     </div>
 
     <div>
         <label for="postal">
-            <input type="text" name="postal" id="postal" placeholder="Code postal">
+            <input type="text" name="cp_ville" id="cp_ville" placeholder="Code postal">
         </label>
     </div>
 
     <div>
         <label for="ville">
-            <input type="text" name="ville" id="ville" placeholder="Ville">
+            <input type="text" name="nom_ville" id="nom_ville" placeholder="Ville">
         </label>
     </div>
 
