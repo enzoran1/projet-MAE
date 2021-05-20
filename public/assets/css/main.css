@@ -1,10 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-}
+
+
 body{
     background-color: #1f1f1f;
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .hidden {
@@ -146,14 +146,21 @@ margin-bottom: 15px;
 }
 .carte-interface-alumni{
     background-image: url(../image/photo-carte2.jpg);
-    
-    
 
 }
 
-
-
-
+.banDecouverte { 
+    background-image: url(../image/michel-grolet-EfKJzb-Bpl8.jpg);
+    background-size: cover;
+    height: 100vh;
+    opacity: .7;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
 
 @media screen and (min-width:688px){
 

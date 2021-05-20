@@ -17,7 +17,3 @@ navButton2.addEventListener("click", function(){
 
 
 
-function logoutUser() 
-{ 
-    <?php ?>
-}
