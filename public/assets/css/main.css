@@ -13,7 +13,7 @@ body{
 
 .ban{
     
-    background-image: url(./image/ban-home.jpg);
+    background-image: url(../image/ban-home.jpg);
     background-size: cover;
     height: 100vh;
     background-position: center;
@@ -130,7 +130,7 @@ margin-bottom: 15px;
     width: 250px;
     height: 280px;
     text-align: center;
-    background-image: url(./image/photo-carte.jpg);
+    background-image: url(../image/photo-carte.jpg);
     background-size: cover;
     margin-bottom: 45px;
     border-radius: 5px;
@@ -140,12 +140,12 @@ margin-bottom: 15px;
 }
 .carte-professionnels{
     
-    background-image: url(./image/photo-carte1.jpg);
+    background-image: url(../image/photo-carte1.jpg);
    
 
 }
 .carte-interface-alumni{
-    background-image: url(./image/photo-carte2.jpg);
+    background-image: url(../image/photo-carte2.jpg);
     
     
 

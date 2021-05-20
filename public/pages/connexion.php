@@ -10,18 +10,19 @@ if (!empty($_SESSION['email'])) {
 }
 
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) 
+{ echo 'ok';
     if (
         !empty($_POST['email'])
         && !empty($_POST['mdp'])
     ) {
-        require_once '../pages/cobdd.php';
+        require_once '../pages/cobdd.php'; // PROBLEME A PARTIR D'ICI 
 
         $yourEmail          =    $_POST['email'];
         $yourPassword       =    $_POST['mdp'];
 
         // 1ERE REQUETE : selectionne l'email
-        $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='" . $yourEmail . "'");
+        $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='".$yourEmail."'");
         $queryUser->execute();
         $result = $queryUser->fetch();
 
@@ -58,9 +59,6 @@ if (isset($_POST['submit'])) {
                 <input type="password" name="password" id="password" placeholder="password">
             </label>
         </div>
-
-
-
 
 
         <button type="submit" name="submit" value='submit'>Envoyer</button>

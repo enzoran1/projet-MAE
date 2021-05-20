@@ -39,10 +39,10 @@
             <h3>Suivez-nous</h3>
         </div>
         <div class="footer-center-icone">
-            <img src="../assets/css/image/icons8-facebook-48.png" alt="">
-            <img src="../assets/css/image/icons8-linkedin-48.png" alt="">
-            <img src="../assets/css/image/icons8-instagram-48.png" alt="">
-            <img src="../assets/css/image/icons8-play-button-48.png" alt="">
+            <img src="../assets/image/icons8-facebook-48.png" alt="">
+            <img src="../assets/image/icons8-linkedin-48.png" alt="">
+            <img src="../assets/image/icons8-instagram-48.png" alt="">
+            <img src="../assets/image/icons8-play-button-48.png" alt="">
         </div>
     </div>
 
