@@ -17,3 +17,7 @@ include '../inc/inc_top.php';
         Numéro de téléphone : <?= $_SESSION['telephone'] ?>
     </li>
 </ul>
+
+<?php
+    include '../inc/inc_bottom.php';
+?>

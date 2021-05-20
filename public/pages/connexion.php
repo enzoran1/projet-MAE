@@ -30,16 +30,15 @@ if (isset($_POST['submit']))
         }
         else
         { // 2EME REQUETE : selectionne le password SI il reconnait le mail
-            if (!password_verify($yourPassword, $result['mdp'])) 
+            if (!password_verify($yourPassword, $result['password'])) 
             {
                 die('Mot de passe invalide');
             }
             else
             {
-                ob_clean();
 
                 $_SESSION['email'] = $result['email'];
-                $_SESSION['password'] = $result['mdp'];
+                $_SESSION['password'] = $result['password'];
                 $_SESSION['telephone'] = $result['telephone'];
 
                 header('Location: dashboard.php');

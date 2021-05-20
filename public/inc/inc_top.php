@@ -348,7 +348,7 @@ function dynamicTitle()
 
                 if(!empty($_SESSION['email']))
                 {
-                    ?> <a href="" onclick='<?php session_destroy(); ?> alert("vous êtes déco");'>Déconnexion</a> <?php
+                    ?> <a href="" onclick="">Déconnexion</a> <?php // intégrer de l'ajax...
                 } ?>
             </div>
 
