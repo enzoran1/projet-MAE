@@ -9,9 +9,9 @@ function dynamicTitle()
     explode('/', $title); // séparation de la chaine title avec l'indice "/". Output = array
     $title = str_replace(array('/', '.php', 'pages'), '', $title); // rempplacement des arrays par ''
 
-    if ($title === 'index') 
+    if ($title === 'index')
     // règle particulière pour la Homepage :
-    { 
+    {
         $title = 'Accueil';
     }
     $title = 'Alumnifa -' . ' ' . $title; // Sinon, affiche le title précédé de "Alumnifa -" 
@@ -27,10 +27,10 @@ function dynamicTitle()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php dynamicTitle()?></title>
-    <link rel="stylesheet" href="../public/css/header.css">
-    <link rel="stylesheet" href="../public/css/main.css">
-    <link rel="stylesheet" href="../public/css/footer.css">
-    <link rel="stylesheet" href="../public/css/modal.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/formulaire.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
 </head>
 
 <body>
@@ -91,7 +91,7 @@ function dynamicTitle()
             <div class="nav-item-recherche">
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
-                    <button type="submit"><img src="./public/css/image/icons8-search-24.png" alt=""></button>
+                    <button type="submit"><img src="../assets/image/icons8-search-48.png" alt=""></button>
                 </form>
             </div>
         </ul>
@@ -152,16 +152,16 @@ function dynamicTitle()
                 <a href="#">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="pages/connexion">Compte</a>
+                <a href="./pages/connexion">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="page/inscription">Inscription</a>
+                <a href="./page/inscription">Inscription</a>
             </li>
 
             <div class="nav-item-recherche2">
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
-                    <button type="submit"><img src="./public/css/image/icons8-search-24.png" alt=""></button>
+                    <button type="submit"><img src="../assets/image/icons8-search-48.png" alt=""></button>
                 </form>
             </div>
         </ul>
@@ -275,7 +275,7 @@ function dynamicTitle()
             </svg>
         </a>
 
-        <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>" class="navbarSvg3">
+        <a href="/index" class="navbarSvg3">
             <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="350" height="140" viewBox="0 0 657.552 161.678">
                 <defs>
                     <clipPath id="clip-path">
@@ -328,44 +328,42 @@ function dynamicTitle()
 
         <ul class="nav-menu3">
             <li class="nav-item3">
-                <a href="<?php echo strpbrk($_SERVER['PHP_SELF'], '/pages') ? '../index' : 'index' ?>">Accueil</a>
+                <a href="/index">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/decouverte' : '/pages/decouverte' ?>">Découvrez l'IFA</a>
+                <a href="/pages/decouverte">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
-                <a href="">Association</a>
+                <a href="/pages/associations">Association</a>
             </li>
             <li class="nav-item3">
-                <a href="">Réseau</a>
+                <a href="/pages/reseau">Réseau</a>
             </li>
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/connexion' : '/pages/connexion' ?>">Compte</a>
-                <a href="<?php echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/inscription' : '/pages/inscription' ?>">Inscription</a>
+                <a href="/pages/connexion">Compte</a>
+                <a href="/pages/inscription">Inscription</a>
                 <?php 
 
                 if(!empty($_SESSION['email']))
-                { 
-                    echo '<a href="';
-                    echo stristr($_SERVER['PHP_SELF'], '/pages', true) ? '/deconnexion' : '/pages/deconnexion'; 
-                    echo '">Deconnexion</a> ';
-                }?> 
+                {
+                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php
+                } ?>
             </div>
 
             <div class="nav-item-recherche3">
 
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
-                    <button type="submit"><img src="./icons8-search-24.png" alt=""></button>
+                    <button type="submit"><img src="../assets/image/icons8-search-24.png" alt=""></button>
                 </form>
 
             </div>
         </div>
     </nav>
 
-    <script src="../public/script/script.js"></script>
+    <script src="../assets/script/script.js"></script>
 </body>
 
 </html>

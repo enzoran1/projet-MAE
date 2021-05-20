@@ -1,5 +1,5 @@
 <?php
-include 'inc/inc_top.php';
+require './inc/inc_top.php';
 ?>
 
 <div class="ban">
@@ -31,7 +31,6 @@ include 'inc/inc_top.php';
         Ipsam repudiandae pariatur architecto facere minus eveniet, nihil quidem, deserunt officia sit quae? Alias soluta tempora aut in iste officiis ratione omnis, impedit necessitatibus sequi saepe dolores odio praesentium quo?</p>
 
 </div>
-
 <div class="carte">
     <div class="carte-eleves">
 
@@ -53,4 +52,4 @@ include 'inc/inc_top.php';
 </div>
 
 
-<?php include 'inc/inc_bottom.php'; ?>
+<?php require './inc/inc_bottom.php'; ?>
