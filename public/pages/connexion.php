@@ -11,33 +11,40 @@ if (!empty($_SESSION['email'])) {
 
 
 if (isset($_POST['submit'])) 
-{ echo 'ok';
+{ 
     if (
         !empty($_POST['email'])
-        && !empty($_POST['mdp'])
-    ) {
-        require_once '../pages/cobdd.php'; // PROBLEME A PARTIR D'ICI 
+        && !empty($_POST['password'])) 
+    {
+        require_once '../pages/cobdd.php'; 
 
         $yourEmail          =    $_POST['email'];
-        $yourPassword       =    $_POST['mdp'];
-
+        $yourPassword       =    $_POST['password'];
         // 1ERE REQUETE : selectionne l'email
         $queryUser = $bdd->prepare("SELECT * FROM user WHERE email='".$yourEmail."'");
         $queryUser->execute();
         $result = $queryUser->fetch();
-
-        // 2EME REQUETE : selectionne le mdp SI il reconnait le mail
-        if (!password_verify($yourPassword, $result['mdp'])) {
-            die('Mot de passe invalide');
-        } else {
-            ob_clean();
-
-            $_SESSION['email'] = $result['email'];
-            $_SESSION['mdp'] = $result['mdp'];
-            $_SESSION['telephone'] = $result['telephone'];
-
-            header('Location: dashboard.php');
+        if($queryUser->rowCount() == 0)
+        { 
+            echo 'E-mail invalide';
         }
+        else
+        { // 2EME REQUETE : selectionne le password SI il reconnait le mail
+            if (!password_verify($yourPassword, $result['mdp'])) 
+            {
+                die('Mot de passe invalide');
+            }
+            else
+            {
+                ob_clean();
+
+                $_SESSION['email'] = $result['email'];
+                $_SESSION['password'] = $result['mdp'];
+                $_SESSION['telephone'] = $result['telephone'];
+
+                header('Location: dashboard.php');
+            }
+        }    
     }
 }
 

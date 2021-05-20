@@ -11,7 +11,7 @@ include '../inc/inc_top.php';
        Adresse E-mail :<?= $_SESSION['email'] ?>
     </li>
     <li>
-        Votre mot de passe : <?= $_SESSION['mdp'] ?>
+        Votre mot de passe : <?= $_SESSION['password'] ?>
     </li>
     <li>
         Numéro de téléphone : <?= $_SESSION['telephone'] ?>
