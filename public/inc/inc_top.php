@@ -356,7 +356,7 @@ function dynamicTitle()
 
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
-                    <button type="submit"><img src="../assets/css/image/icons8-search-24.png" alt=""></button>
+                    <button type="submit"><img src="../assets/image/icons8-search-24.png" alt=""></button>
                 </form>
 
             </div>
