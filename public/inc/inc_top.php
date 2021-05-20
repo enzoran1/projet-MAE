@@ -348,7 +348,7 @@ function dynamicTitle()
 
                 if(!empty($_SESSION['email']))
                 {
-                    ?> <a href="" onclick="">Déconnexion</a> <?php // intégrer de l'ajax...
+                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php // intégrer de l'ajax...
                 } ?>
             </div>
 
