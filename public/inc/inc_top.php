@@ -339,6 +339,12 @@ function dynamicTitle()
             <li class="nav-item3">
                 <a href="/pages/reseau">Réseau</a>
             </li>
+            <?php if(!empty($_SESSION['email'])) { 
+                ?> 
+            <li class="nav-item4">
+                <a href="/pages/offres">Consulter les offres</a>
+            </li> <?php
+            } ?>
         </ul>
         <div>
             <div class="nav-item3-right">

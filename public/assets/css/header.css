@@ -24,10 +24,8 @@ Début navbar mobile
 }
 
 .nav-item{
-
     margin-bottom: 15px;
     margin-left: 10px;
-
 }
 
 
@@ -119,7 +117,6 @@ debut de la navbar tablette
 
     margin-bottom: 15px;
     margin-left: 10px;
-
 }
 
 
@@ -251,6 +248,15 @@ fin de la navbar tablette
     border: none;
 }
 
+.nav-item4 a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-item4 a:hover { 
+    color: #ff5737;
+    transition: 1s;
+}
 
 @media screen and (min-width:688px){
 
