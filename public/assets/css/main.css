@@ -149,8 +149,7 @@ margin-bottom: 15px;
 
 }
 
-.banDecouverte { 
-    background-image: url(../image/michel-grolet-EfKJzb-Bpl8.jpg);
+.banhero{ 
     background-size: cover;
     height: 100vh;
     background-position: center;
@@ -159,6 +158,14 @@ margin-bottom: 15px;
     align-content: center;
     justify-content: center;
     text-align: center;
+}
+
+.banhero.decouverte { 
+    background-image: url(../image/michel-grolet-EfKJzb-Bpl8.jpg);
+}
+
+.banhero.association { 
+    background-image: url(../image/pexels-fauxels-3183197.jpg);
 }
 
 .spacer { 
