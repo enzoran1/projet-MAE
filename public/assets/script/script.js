@@ -14,6 +14,3 @@ const navMenu2 = document.querySelector(".nav-menu2");
 navButton2.addEventListener("click", function(){
     navMenu2.classList.toggle("show");
 })
-
-
-

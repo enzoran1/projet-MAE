@@ -6,7 +6,6 @@ include '../pages/cobdd.php';
 // $requete->execute();
 // $situations = $requete->fetchAll(PDO::FETCH_ASSOC);
 
-$_SESSION['situations'] = 1;
 
 if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que tous les champs sont remlis 
 
@@ -40,7 +39,7 @@ if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que t
             $requete->execute(array($email, $password, $tel));
 
             $_SESSION['email'] = $email;
-
+            $_SESSION['value'] = "eleve";
 
 
 
@@ -73,16 +72,6 @@ if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que t
             </label>
         </div>
 
-        <!-- <div>
-        <label for="situation"></label>
-
-        <select name="situation" id="situation">
-            <option value="">-- situation --</option>
-            <?php /* foreach ($situations as $situation) { ?>
-                <option value="<?= $situation['id_situation'] ?>"><?= $situation['label_situation'] */ ?></option>
-            <?php /* } */ ?>
-        </select>
-    </div> -->
 
 
         <button type="submit" name="submit" value='submit'>Envoyer</button>

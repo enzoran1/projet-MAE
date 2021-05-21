@@ -25,6 +25,7 @@ include '../inc/inc_top.php';
 <?php
 
 if(isset($_GET['editProfile'])) { 
+    var_dump($_SESSION);
     // C'est là ou nous allons trier les utilisateurs et compléter la bdd 
 }
 
