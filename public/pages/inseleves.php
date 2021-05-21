@@ -32,14 +32,13 @@ if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que t
         } else {
             // dans le cas ou count est égal à 0, donc nouvel email on continue
             $requete = $bdd->prepare(
-                'INSERT INTO user(email, mdp, telephone) 
+                'INSERT INTO user(email, password, telephone) 
                 VALUES(?,?,?)'
             );
 
             $requete->execute(array($email, $password, $tel));
 
             $_SESSION['email'] = $email;
-            $_SESSION['value'] = "eleve";
 
 
 

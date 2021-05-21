@@ -25,10 +25,12 @@ include '../inc/inc_top.php';
 <?php
 
 if(isset($_GET['editProfile'])) { 
-    var_dump($_SESSION);
-    // C'est là ou nous allons trier les utilisateurs et compléter la bdd 
+    if(isset($_SESSION['telephone'])) { 
+        $_GET['editProfile'] = 'eleve';
+    } else { 
+        $_GET['editProfile'] = 'pro';
+    }
+    require '../../private/formEditProfile.php';
 }
-
-
     include '../inc/inc_bottom.php';
 ?>
