@@ -71,10 +71,8 @@ padding-right: 18px;
     color: white;
     text-align: center;
     padding: 16px;
-    border: 3px solid #ff5737;
-    
-    
-    
+    border-top: 3px solid #ff5737;
+    border-bottom: 3px solid #ff5737;
     
 }
 .titre-text p{
@@ -86,6 +84,21 @@ padding-right: 18px;
     margin-top: 20px;
     transition: 1s;
 }
+
+.titre-text{
+     padding: 32px;
+}
+
+.titre-text h2{
+     font-size: 200%;
+     transition: 1s;
+}
+
+.titre-text p{
+     font-size: 120%;
+     transition: 1s;
+}
+
 #interrogation-couleur{
     color:#ff5737 ;
 }
@@ -190,17 +203,7 @@ margin-bottom: 15px;
        padding-left: 25px;
        padding-right: 25px;
    }
-   .titre-text{
-       padding: 32px;
-   }
-   .titre-text h2{
-       font-size: 200%;
-       transition: 1s;
-   }
-   .titre-text p{
-       font-size: 120%;
-       transition: 1s;
-   }
+ 
    .carte{
        display: flex;
        justify-content: space-around;
