@@ -18,6 +18,16 @@ include '../inc/inc_top.php';
     </li>
 </ul>
 
+<form action="" method="get">
+    <button type="submit" name="editProfile" class="editProfile"> Ajouter des informations à mon compte</button>
+</form>
+
 <?php
+
+if(isset($_GET['editProfile'])) { 
+    // C'est là ou nous allons trier les utilisateurs et compléter la bdd 
+}
+
+
     include '../inc/inc_bottom.php';
 ?>
