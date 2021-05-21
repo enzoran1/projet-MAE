@@ -1,10 +1,12 @@
 <?php 
 
+require 'cobdd.php';
+var_dump($_SESSION);
 
 function editProfileStudent() { 
     $formulaire = '
     
-<form action="" method="POST" class="formulaireeditProfile">
+<form action="" method="post" class="formulaireeditProfile">
     <div class="formulaire__container">
         <h3>Informations supplémentaires</h3>
         <div class="formulaire__contenue">
@@ -64,22 +66,46 @@ function editProfilePro() {
 }
 
 
+
+
 if(isset($_GET['editProfile'])){
-    if(isset($_GET['editProfile']) == "eleve" )
+    if($_GET['editProfile'] == "eleve")
     { 
         $formulaire = editProfileStudent();
     } 
-    if(isset($_GET['editProfile']) == "pro" ){ 
+    if($_GET['editProfile'] == "pro" ){ 
         $formulaire = editProfilePro();
+        // addPro();
     }
     echo $formulaire;
 }
 
 
+if(isset($_POST['nom']) 
+&& isset($_POST['prenom']) 
+&& isset($_POST['cursus']) 
+&& isset($_POST['emploi']) 
+&& isset($_POST['ville'])) { 
+    $query = $bdd->prepare('INSERT INTO eleves 
+    (id_user, nom, prenom, cursus, emploi, id_ville) VALUES (?, ?, ?, ?, ?, ?) 
+     
+    ');
 
+    $query->execute(array( $_SESSION['id'] ,$_POST['nom'], $_POST['prenom'], $_POST['cursus'], $_POST['emploi'], intval($_POST['ville'])));
+    $query->fetch();
+}
 
+/* 
 
+ALTER TABLE Conges
+    ADD FOREIGN KEY (ID_EMP) REFERENCES Employes(Id);
+Pour supprimer une contrainte FOREIGN KEY, utilisez la syntaxe suivante :
 
+?
 
+ALTER TABLE Conges
+    DROP FOREIGN KEY;
+
+*/
 ?>
 

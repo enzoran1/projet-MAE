@@ -2,9 +2,7 @@
 include '../inc/inc_top.php';
 include '../pages/cobdd.php';
 
-// $requete = $bdd->prepare('SELECT * FROM situations');
-// $requete->execute();
-// $situations = $requete->fetchAll(PDO::FETCH_ASSOC);
+$value = "pro";
 
 
 if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que tous les champs sont remlis 
@@ -32,14 +30,12 @@ if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que t
         } else {
             // dans le cas ou count est égal à 0, donc nouvel email on continue
             $requete = $bdd->prepare(
-                'INSERT INTO user(email, mdp, telephone) 
+                'INSERT INTO user(email, password, telephone) 
                 VALUES(?,?,?)'
             );
 
             $requete->execute(array($email, $password, $tel));
 
-            $_SESSION['email'] = $email;
-            $_SESSION['value'] = "pro";
 
 
 
@@ -51,3 +47,29 @@ if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que t
     }
 }
 ?>
+
+<form action="" method="POST" class="formulaire">
+    <div class="formulaire__container">
+        <h3>Inscription</h3>
+        <div class="formulaire__contenue">
+            <label for="email">
+                <input type="email" name="email" id="email" placeholder="email">
+            </label>
+        </div>
+        <div class="formulaire__contenue">
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="password">
+            </label>
+        </div>
+        <div class="formulaire__contenue">
+            <label for="tel">
+                <input type="text" name="tel" id="tel" placeholder="tel">
+            </label>
+        </div>
+
+
+
+        <button type="submit" name="submit" value='submit'>Envoyer</button>
+    </div>
+
+</form>

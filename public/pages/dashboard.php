@@ -23,14 +23,10 @@ include '../inc/inc_top.php';
 </form>
 
 <?php
-
-if(isset($_GET['editProfile'])) { 
-    if(isset($_SESSION['telephone'])) { 
+if(isset($_GET['editProfile'])) {  
         $_GET['editProfile'] = 'eleve';
-    } else { 
-        $_GET['editProfile'] = 'pro';
     }
-    require '../../private/formEditProfile.php';
-}
+    require 'formEditProfile.php';
+    require 'cobdd.php';
     include '../inc/inc_bottom.php';
 ?>

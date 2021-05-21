@@ -36,10 +36,10 @@ if (isset($_POST['submit']))
             }
             else
             {
-
                 $_SESSION['email'] = $result['email'];
                 $_SESSION['password'] = $result['password'];
                 $_SESSION['telephone'] = $result['telephone'];
+                $_SESSION['id'] = $result['id_user'];
 
                 header('Location: dashboard.php');
             }
