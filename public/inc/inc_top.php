@@ -334,7 +334,7 @@ function dynamicTitle()
                 <a href="/pages/decouverte">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
-                <a href="/pages/associations">Association</a>
+                <a href="/pages/association">Association</a>
             </li>
             <li class="nav-item3">
                 <a href="/pages/reseau">Réseau</a>
