@@ -3,7 +3,7 @@
 require 'cobdd.php';
 var_dump($_SESSION);
 
-function editProfileStudent() { 
+function editProfileStudent() {  // SQL -> transfère user vers eleves ou pro 
     $formulaire = '
     
 <form action="" method="post" class="formulaireeditProfile">
@@ -68,32 +68,49 @@ function editProfilePro() {
 
 
 
-if(isset($_GET['editProfile'])){
+if(isset($_GET['editProfile'])){ 
     if($_GET['editProfile'] == "eleve")
     { 
         $formulaire = editProfileStudent();
     } 
     if($_GET['editProfile'] == "pro" ){ 
         $formulaire = editProfilePro();
-        // addPro();
     }
     echo $formulaire;
 }
 
+function queryStudent() // requêtes de transfert user -> eleves
+{
+    if(isset($_POST['nom']) 
+    && isset($_POST['prenom']) 
+    && isset($_POST['cursus']) 
+    && isset($_POST['emploi']) 
+    && isset($_POST['ville'])) { 
+        $query = $bdd->prepare('INSERT INTO eleves 
+        (id_user, nom, prenom, cursus, emploi, id_ville) VALUES (?, ?, ?, ?, ?, ?) 
+        ');
 
-if(isset($_POST['nom']) 
-&& isset($_POST['prenom']) 
-&& isset($_POST['cursus']) 
-&& isset($_POST['emploi']) 
-&& isset($_POST['ville'])) { 
-    $query = $bdd->prepare('INSERT INTO eleves 
-    (id_user, nom, prenom, cursus, emploi, id_ville) VALUES (?, ?, ?, ?, ?, ?) 
-     
-    ');
-
-    $query->execute(array( $_SESSION['id'] ,$_POST['nom'], $_POST['prenom'], $_POST['cursus'], $_POST['emploi'], intval($_POST['ville'])));
-    $query->fetch();
+        $query->execute(array( $_SESSION['id'] ,$_POST['nom'], $_POST['prenom'], $_POST['cursus'], $_POST['emploi'], intval($_POST['ville'])));
+        $query->fetch();
+    }
 }
+
+function queryPro() 
+{ 
+    if (isset ($_POST['id_user']) && ($_POST['nom_entreprise ']) && ($_POST['site_entreprise']) && ($_POST['id_ville']) )
+    { 
+        $query = $bdd->prepare('INSERT INTO entreprises (id_user, nom_entreprise, site_entreprise, id_ville) VALUES (?, ?, ?, ?)');
+        $query->execute(array($_SESSION['id'], // faire le form  ));
+    }
+
+
+
+    //     id_user
+// nom_entreprise 
+// site_entreprise
+// id_ville
+}
+
 
 /* 
 
