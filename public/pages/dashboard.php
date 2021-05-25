@@ -24,8 +24,15 @@ include '../inc/inc_top.php';
 
 <?php
 if(isset($_GET['editProfile'])) {  
+    if($_SESSION['poste'] == "eleve")
+    { 
         $_GET['editProfile'] = 'eleve';
     }
+    if($_SESSION['poste'] == 'pro')
+    { 
+        $_GET['editProfile'] = 'pro';
+    }
+}
     require 'formEditProfile.php';
     require 'cobdd.php';
     include '../inc/inc_bottom.php';

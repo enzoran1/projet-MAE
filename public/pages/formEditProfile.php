@@ -1,8 +1,4 @@
 <?php 
-
-require 'cobdd.php';
-var_dump($_SESSION);
-
 function editProfileStudent() {  // SQL -> transfère user vers eleves ou pro 
     $formulaire = '
     
@@ -69,60 +65,61 @@ function editProfilePro() {
 
 
 if(isset($_GET['editProfile'])){ 
-    if($_GET['editProfile'] == "eleve")
-    { 
-        $formulaire = editProfileStudent();
-    } 
-    if($_GET['editProfile'] == "pro" ){ 
-        $formulaire = editProfilePro();
-    }
+    if($_SESSION['poste'] == 'eleve')
+        { 
+            $formulaire = editProfileStudent();
+        } 
+        if($_SESSION['poste'] == 'pro') 
+        {
+            $formulaire = editProfilePro();
+        }
     echo $formulaire;
 }
 
 function queryStudent() // requêtes de transfert user -> eleves
 {
+    require 'cobdd.php';
     if(isset($_POST['nom']) 
     && isset($_POST['prenom']) 
     && isset($_POST['cursus']) 
     && isset($_POST['emploi']) 
     && isset($_POST['ville'])) { 
         $query = $bdd->prepare('INSERT INTO eleves 
-        (id_user, nom, prenom, cursus, emploi, id_ville) VALUES (?, ?, ?, ?, ?, ?) 
-        ');
+            (id_user, nom, prenom, cursus, emploi, id_ville)
+            VALUES (?, ?, ?, ?, ?, ?) ');
 
         $query->execute(array( $_SESSION['id'] ,$_POST['nom'], $_POST['prenom'], $_POST['cursus'], $_POST['emploi'], intval($_POST['ville'])));
         $query->fetch();
+        echo 'votre profil a été mis à jour';
     }
 }
 
 function queryPro() 
 { 
-    if (isset ($_POST['id_user']) && ($_POST['nom_entreprise ']) && ($_POST['site_entreprise']) && ($_POST['id_ville']) )
+    require 'cobdd.php';
+    if (isset ($_POST['id_user']) 
+        && ($_POST['nom_entreprise ']) 
+        && ($_POST['site_entreprise']) 
+        && ($_POST['id_ville']) )
     { 
         $query = $bdd->prepare('INSERT INTO entreprises (id_user, nom_entreprise, site_entreprise, id_ville) VALUES (?, ?, ?, ?)');
-        $query->execute(array($_SESSION['id'], // faire le form  ));
+        $query->execute(array($_SESSION['id'], $_POST['nom_entreprise'], $_POST['site_entreprise'], $_POST['id_ville']));
+        $query->fetch();
+        echo 'votre profil a été mis à jour';
     }
-
-
-
-    //     id_user
-// nom_entreprise 
-// site_entreprise
-// id_ville
 }
 
+if(isset($_POST['submit']))
+{ 
+    if($_SESSION['poste'] == 'eleve')
+    { 
+        $formulaire = queryStudent();
+    } 
+    if($_SESSION['poste'] == 'pro') 
+    {
+        $formulaire = queryPro();
+    }
+}
 
-/* 
-
-ALTER TABLE Conges
-    ADD FOREIGN KEY (ID_EMP) REFERENCES Employes(Id);
-Pour supprimer une contrainte FOREIGN KEY, utilisez la syntaxe suivante :
-
-?
-
-ALTER TABLE Conges
-    DROP FOREIGN KEY;
-
-*/
 ?>
 

@@ -5,21 +5,22 @@ include '../pages/cobdd.php';
 $value = "pro";
 
 
-if (!empty($_POST['submit'])) { // On vérifie que le submit est lancé et que tous les champs sont remlis 
+if (!empty($_POST['submit'])) 
+{ // On vérifie que le submit est lancé et que tous les champs sont remlis 
 
     if (
         !empty($_POST['email'])
         && !empty($_POST['email'])
         && !empty($_POST['password'])
         && !empty($_POST['tel'])
-    ) {
-
+        ) 
+    {
         $email = $_POST['email'];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $tel = $_POST['tel'];
 
         $requestEmailExist = $bdd->prepare("SELECT * FROM user WHERE email ='" . $email . "'");
-        $requestEmailExist->execute();;
+        $requestEmailExist->execute();
         $count = $requestEmailExist->rowCount(); // renvoi 0 si l'user n'existe pas... 1 s'il existe
 
 

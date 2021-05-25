@@ -40,6 +40,7 @@ if (isset($_POST['submit']))
                 $_SESSION['password'] = $result['password'];
                 $_SESSION['telephone'] = $result['telephone'];
                 $_SESSION['id'] = $result['id_user'];
+                $_SESSION['poste'] = $_POST['role']; 
 
                 header('Location: dashboard.php');
             }
@@ -64,6 +65,12 @@ if (isset($_POST['submit']))
             <label for="password">
                 <input type="password" name="password" id="password" placeholder="password">
             </label>
+            <br>
+            <input type="radio" id="eleve" name="role" value="eleve" checked>
+                <label for="eleve">eleve</label>
+
+            <input type="radio" id="pro" name="role" value="pro"checked>
+                <label for="pro">pro</label>
         </div>
 
 
