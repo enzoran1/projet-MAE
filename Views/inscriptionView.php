@@ -1,22 +1,3 @@
-<!-- if (!empty($_SESSION['email'])) {
-    echo 'Vous êtes déjà connecté(e)';
-    die;
-}
-?> -->
-
-<!-- <div class="carte">
-    <div class="carte-eleves">
-
-        <h3>Eleves</h3>
-        <a href="inseleves.php">Voir</a>
-    </div>
-
-    <div class="carte-professionnels">
-
-        <h3>Professionnels</h3>
-        <a href="insentreprise.php">Voir</a>
-    </div> -->
-
 <form action="" method="POST" class="formulaire">
     <div class="formulaire__container">
         <h3>Inscription</h3>
@@ -37,3 +18,4 @@
         </div>
         <button type="submit" name="submit" value='submit'>Envoyer</button>
     </div>
+</form>
