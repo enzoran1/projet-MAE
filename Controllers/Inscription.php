@@ -6,8 +6,12 @@ Class Inscription
 
     public static function index()
     { 
-        require '../Views/inscriptionView.php';
-        require BASE_DIR. 'Controllers/User.php';
+        require BASE_DIR . 'Views/inscriptionView.php';
     }
+}
 
+if(isset($_POST['submit'])) 
+{ 
+    require BASE_DIR. 'Models/database.php'; // erreur ici !!! :D 
+    require BASE_DIR. 'Models/addUser.php';
 }

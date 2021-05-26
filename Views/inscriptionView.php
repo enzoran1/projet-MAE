@@ -13,7 +13,7 @@
         </div>
         <div class="formulaire__contenue">
             <label for="tel">
-                <input type="text" name="tel" id="tel" placeholder="tel">
+                <input type="text" name="telephone" id="telephone" placeholder="telephone">
             </label>
         </div>
         <button type="submit" name="submit" value='submit'>Envoyer</button>
