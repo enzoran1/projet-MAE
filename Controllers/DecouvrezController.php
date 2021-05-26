@@ -1,21 +1,16 @@
 <?php 
 
-require 'Controller.php';
+namespace Controllers;
 
 
 Class DecouvrezController
 {
-
     public static function index()
     { 
-        if(isset($_GET['action']) == "decouverte")
-        {
-            require 'assets/inc_dir/header.php';
-            require 'Views/decouver';
-            require 'assets/inc_dir/footer.php';
-        }
+        require 'assets/inc_dir/header.php';
+        require 'Views/decouvrezView.php';
+        require 'assets/inc_dir/footer.php';        
     }
-
 }
 
 ?>
