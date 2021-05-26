@@ -3,7 +3,6 @@
 
 Class Inscription
 { 
-
     public static function index()
     { 
         require BASE_DIR . 'Views/inscriptionView.php';
@@ -12,6 +11,6 @@ Class Inscription
 
 if(isset($_POST['submit'])) 
 { 
-    require BASE_DIR. 'Models/database.php'; // erreur ici !!! :D 
+    require BASE_DIR. 'Models/database.php'; 
     require BASE_DIR. 'Models/addUser.php';
 }
