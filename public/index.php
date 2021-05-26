@@ -29,6 +29,10 @@ else
    {
       require BASE_DIR. 'Views/reseauView.php';
    }
+   if($_GET['action'] == "inscription")
+   {
+      require BASE_DIR. 'Views/inscriptionView.php';
+   }
 }
 
 require '../Views/inc_dir/footer.php';

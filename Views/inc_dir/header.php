@@ -348,13 +348,13 @@ function dynamicTitle()
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="/pages/connexion">Compte</a>
-                <a href="/pages/inscription">Inscription</a>
+                <a href="/index.php?action=compte">Compte</a>
+                <a href="/index.php?action=inscription">Inscription</a>
                 <?php 
 
                 if(!empty($_SESSION['email']))
                 {
-                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php // intégrer de l'ajax...
+                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php 
                 } ?>
             </div>
 

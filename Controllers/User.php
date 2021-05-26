@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\User;
+
 class User
 { 
     private function __construct($email, $password, $tel)
@@ -7,11 +9,6 @@ class User
         $this->$email = $email;
         $this->$password = $password;
         $this->$tel = $tel;
-    }
-
-    public static function index()
-    { 
-        require '../Views/inscriptionView.php';
     }
 
     public function createUser()
