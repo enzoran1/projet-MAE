@@ -73,7 +73,7 @@ function dynamicTitle()
                 <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item">
-                <a href="#">Association</a>
+                <a href="../pages/association">Association</a>
             </li>
             <li class="nav-item">
                 <a href="../pages/reseau">Réseau</a>
@@ -142,7 +142,7 @@ function dynamicTitle()
                 <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Association</a>
+                <a href="../pages/association">Association</a>
             </li>
             <li class="nav-item2">
                 <a href="../pages/reseau">Réseau</a>
@@ -330,7 +330,7 @@ function dynamicTitle()
                 <a href="../pages/decouvririfa">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
-                <a href="">Association</a>
+                <a href="../pages/association">Association</a>
             </li>
             <li class="nav-item3">
                 <a href="../pages/reseau">Réseau</a>

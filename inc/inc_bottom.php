@@ -46,8 +46,8 @@
     <div class="footer-right">
         <div class="footer-right-liens">
             <a href="">Conditions d'utilisation</a>
-            <a href="">Mentions légales</a>
-            <a href="">F.A.Q</a>
+            <a href="../pages/mentionslegales">Mentions légales</a>
+            <a href="../pages/faq">F.A.Q</a>
 
         </div>
     </div>

@@ -77,18 +77,6 @@ if (!empty($_POST['submit']))
         </label>
     </div>
 
-    <!-- <div>
-        <label for="situation"></label>
-
-        <select name="situation" id="situation">
-            <option value="">-- situation --</option>
-            <?php /* foreach ($situations as $situation) { ?>
-                <option value="<?= $situation['id_situation'] ?>"><?= $situation['label_situation'] */ ?></option>
-            <?php /* } */ ?>
-        </select>
-    </div> -->
-
-
     <button type="submit" name="submit" value='submit'>Envoyer</button>
 
 </form>

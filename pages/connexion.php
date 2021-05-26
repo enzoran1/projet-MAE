@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
         && !empty               ($_POST['mdp'])
     )
     { 
-        //require_once '../pages/cobdd.php'; 
+         
 
         $mail      =    $_POST['mail'];
         $mdp       =    $_POST['mdp'];
@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
         $result = $queryUser->fetch();
 
         // 2EME REQUETE : selectionne le mdp SI il reconnait le mail
-           if(password_verify($mdp, $result['mdp'])) // LE POINT D'EXCLAMATION A ENLEVER
+           if(password_verify($mdp, $result['mdp'])) //Il faut enlever le point d'interrogation
         { 
             die('Mot de passe invalide');
         }
