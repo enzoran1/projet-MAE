@@ -15,9 +15,15 @@ if(!isset($_GET['action']))
 } 
 else 
 { 
-   if($_GET['action'] = "decouverte")
+   ob_start();
+
+   if($_GET['action'] == "decouverte")
    { 
       require BASE_DIR. 'Views/decouvrezView.php';
+   }
+   if($_GET['action'] == "association")
+   {
+      require BASE_DIR. 'Views/associationView.php';
    }
 }
 

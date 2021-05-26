@@ -1,7 +1,3 @@
-<?php
-// require './inc/inc_top.php';
-?>
-
 <div class="ban">
 
     <div class="ban-titre">
@@ -44,6 +40,3 @@
 
     </div>
 </div>
-
-
-<?php /* require './inc/inc_bottom.php';*/  ?>
