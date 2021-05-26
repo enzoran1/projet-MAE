@@ -2,9 +2,12 @@
 
 class User
 { 
-    private string $email;
-    private string $password;
-    private string $tel;
+    private function __construct($email, $password, $tel)
+    {
+        $this->$email = $email;
+        $this->$password = $password;
+        $this->$tel = $tel;
+    }
 
     public static function index()
     { 
@@ -13,13 +16,14 @@ class User
 
     public function createUser()
     { 
-        require BASE_DIR. 'Models/dbConnect.php';
+        
         if(isset($_POST['email']) 
             && isset($_POST['password']) 
             && isset($_POST['tel'])) 
         { 
-            $user = new User();
-            $user->setNewUser($bdd);
+            $user = new User($_POST['email'], $_POST['password'], $_POST['tel']);
+            require BASE_DIR. 'Models/dbConnect.php';
+            require BASE_DIR. 'Models/addUser.php';
         }
         else
         { 
