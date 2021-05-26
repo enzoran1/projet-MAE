@@ -1,11 +1,9 @@
 <?php 
 
-class Association { 
+Class Association 
+{ 
     public static function index()
     { 
-        require '../Views/indexView.php';
+        require BASE_DIR . 'Views/associationView.php';
     }
 }
-
-
-?>

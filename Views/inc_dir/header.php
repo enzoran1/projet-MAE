@@ -331,7 +331,7 @@ function dynamicTitle()
                 <a href="/index">Accueil</a>
             </li>
             <li class="nav-item3">
-                <a href="/index.php?action=decouverte">Découvrez l'IFA</a>
+                <a href="/index.php?action=decouvrez">Découvrez l'IFA</a>
             </li>
             <li class="nav-item3">
                 <a href="/index.php?action=association">Association</a>

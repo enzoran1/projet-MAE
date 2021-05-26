@@ -1,14 +1,9 @@
 <?php 
 
-namespace Controllers;
-
-
 Class Decouvrez
 {
     public static function index()
     { 
-        require '../Views/indexView.php';
+        require BASE_DIR. '/Views/decouvrezView.php';
     }
 }
-
-?>

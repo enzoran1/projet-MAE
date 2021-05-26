@@ -4,7 +4,7 @@ Class Home
 {
     public static function index()
     { 
-        require '../Views/indexView.php';
+        require BASE_DIR. 'Views/indexView.php';
 
     }
 }

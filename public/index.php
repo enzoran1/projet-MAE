@@ -1,4 +1,6 @@
 <?php
+
+
 define('BASE_DIR', '../');
 require BASE_DIR . 'app/Autoloader.php';
 
@@ -15,23 +17,21 @@ if(!isset($_GET['action']))
 } 
 else 
 { 
-   ob_start();
-
-   if($_GET['action'] == "decouverte")
+   if($_GET['action'] == "decouvrez")
    { 
-      require BASE_DIR. 'Views/decouvrezView.php';
+      Decouvrez::index();
    }
    if($_GET['action'] == "association")
    {
-      require BASE_DIR. 'Views/associationView.php';
+      Association::index();
    }
    if($_GET['action'] == "reseau")
    {
-      require BASE_DIR. 'Views/reseauView.php';
+      Reseau::index();
    }
    if($_GET['action'] == "inscription")
    {
-      require BASE_DIR. 'Views/inscriptionView.php';
+      Inscription::index();
    }
 }
 

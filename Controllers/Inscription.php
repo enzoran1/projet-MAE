@@ -1,14 +1,13 @@
 <?php 
 
-use App\User\User;
-require BASE_DIR. 'Controllers/User.php';
 
-Class Inscription extends User
+Class Inscription
 { 
 
     public static function index()
     { 
         require '../Views/inscriptionView.php';
+        require BASE_DIR. 'Controllers/User.php';
     }
 
 }
