@@ -1,14 +1,11 @@
 <?php 
 
-namespace Controllers;
-
-
-Class DecouvrezController
-{
+class Association { 
     public static function index()
     { 
         require '../Views/indexView.php';
     }
 }
+
 
 ?>

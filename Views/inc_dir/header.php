@@ -337,7 +337,7 @@ function dynamicTitle()
                 <a href="/index.php?action=association">Association</a>
             </li>
             <li class="nav-item3">
-                <a href="/pages/reseau">Réseau</a>
+                <a href="/index.php?action=reseau">Réseau</a>
             </li>
             <?php if(!empty($_SESSION['email'])) { 
                 ?> 

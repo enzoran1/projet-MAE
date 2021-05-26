@@ -11,7 +11,7 @@ require '../Views/inc_dir/header.php';
 // Logique pour appeler la bonne vue
 if(!isset($_GET['action']))
 {
-   IndexController::index();
+   Home::index();
 } 
 else 
 { 
@@ -24,6 +24,10 @@ else
    if($_GET['action'] == "association")
    {
       require BASE_DIR. 'Views/associationView.php';
+   }
+   if($_GET['action'] == "reseau")
+   {
+      require BASE_DIR. 'Views/reseauView.php';
    }
 }
 
