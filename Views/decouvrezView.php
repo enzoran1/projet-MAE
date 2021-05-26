@@ -1,7 +1,3 @@
-<?php
-include '../inc/inc_top.php';
-?>
-
 <div class="banhero decouverte">
     <div class="ban-titre">
         <h1>Présentation de l'IFA</h1>
@@ -32,7 +28,3 @@ include '../inc/inc_top.php';
         <a href="#">Voir</a>
     </div>
 </div>
-
-<?php
-include '../inc/inc_bottom.php';
-?>
