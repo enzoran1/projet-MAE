@@ -37,6 +37,10 @@ else
    { 
       Compte::index();
    }
+   if($_GET['action'] == "deconnexion")
+   { 
+      session_destroy();
+   }
 }
 
 require '../Views/inc_dir/footer.php';

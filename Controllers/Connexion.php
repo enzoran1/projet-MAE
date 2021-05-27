@@ -14,5 +14,4 @@ if(isset($_POST['submit']))
 { 
     require BASE_DIR . 'Models/database.php';
     require BASE_DIR . 'Models/connexion.php';
-    echo 'ca marche';
 }

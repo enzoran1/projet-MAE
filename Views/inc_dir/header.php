@@ -354,7 +354,7 @@ function dynamicTitle()
 
                 if(!empty($_SESSION['email']))
                 {
-                    ?> <a href="/pages/deconnexion">Déconnexion</a> <?php 
+                    ?> <a href="/index.php?action=deconnexion">Déconnexion</a> <?php 
                 } ?>
             </div>
 

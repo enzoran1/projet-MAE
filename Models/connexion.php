@@ -12,10 +12,15 @@ if($queryEmail->rowCount() > 0 )
     $queryPassword->execute();
     if($queryPassword->rowCount() > 0 )
     { 
-        echo 'ok'; 
+        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['password'] = $_POST['password'];
     } 
     else 
     { 
-        echo 'faux';
+        echo 'Mot de passe incorrect';
     }
+}
+else
+{
+    echo 'Identifiant incorrect';
 }
