@@ -33,6 +33,10 @@ else
    {
       Inscription::index();
    }
+   if($_GET['action'] == 'compte')
+   { 
+      Compte::index();
+   }
 }
 
 require '../Views/inc_dir/footer.php';

@@ -12,5 +12,5 @@ Class Inscription
 if(isset($_POST['submit'])) 
 { 
     require BASE_DIR. 'Models/database.php'; 
-    require BASE_DIR. 'Models/addUser.php';
+    require BASE_DIR. 'Models/addUser.php';   
 }
