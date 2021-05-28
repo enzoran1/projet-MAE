@@ -197,7 +197,7 @@ margin-bottom: 15px;
 .carousel {
     position: relative;
     box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
-    margin-top: 26px;
+    margin-top: 200px;
 }
 
 .carousel-inner {
@@ -313,7 +313,11 @@ margin-bottom: 15px;
 
 
 
-
+h2#equipetitle { 
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+}
 
 
 

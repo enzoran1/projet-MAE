@@ -38,3 +38,35 @@
         </ol>
     </div>
 </div>
+
+<h2 id="equipetitle">L'équipe</h2>
+
+<div class="carte">
+    <div class="carte-professionnels" id="random1">
+        <h3> Celine</h3>
+        <a href="">Voir plus</a>
+    </div>
+    <div class="carte-professionnels" id="random2">
+        <h3> Bernard</h3>
+        <a href="">Voir plus</a>
+    </div>
+    <div class="carte-professionnels" id="random3">
+        <h3> Didier</h3>
+        <a href="">Voir plus</a>
+    </div>
+</div>
+<div class="carte">
+    <div class="carte-professionnels" id="random4">
+    <h3> Piewe</h3>
+    <a href="">Voir plus</a>
+    </div>
+    <div class="carte-professionnels" id="random1">
+    <h3> Stephanie</h3>
+    <a href="">Voir plus</a>
+    </div>
+    <div class="carte-professionnels" id="random2">
+    <h3> Caroline</h3>
+    <a href="">Voir plus</a>
+    </div>
+</div>
+

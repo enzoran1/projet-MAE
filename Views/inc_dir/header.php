@@ -342,7 +342,7 @@ function dynamicTitle()
             <?php if(!empty($_SESSION['email'])) { 
                 ?> 
             <li class="nav-item4">
-                <a href="/pages/offres">Consulter les offres</a>
+                <a href="/index.php?action=offres">Consulter les offres</a>
             </li> <?php
             } ?>
         </ul>

@@ -60,6 +60,12 @@ else
    }
 }
 
+if($_GET['action'] == "offres")
+{ 
+   Offres::index();
+}
+
+
 require '../Views/inc_dir/footer.php';
 
 // faire un autoload 
