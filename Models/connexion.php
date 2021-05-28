@@ -13,7 +13,7 @@ if($queryEmail->rowCount() > 0 )
     if($queryPassword->rowCount() > 0 )
     { 
         $_SESSION['email'] = $_POST['email'];
-        $_SESSION['password'] = $_POST['password'];
+        $_SESSION['password'] = $_POST['password']; 
     } 
     else 
     { 
@@ -24,3 +24,5 @@ else
 {
     echo 'Identifiant incorrect';
 }
+?>
+

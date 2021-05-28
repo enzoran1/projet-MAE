@@ -1,7 +1,6 @@
 <footer class="footer">
     <div class="footer-left">
         <div class="footer-left-logo">
-            <a href="">
                 <svg id="Logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 170.565 161.678">
                     <defs>
                         <clipPath id="clip-path">
@@ -10,10 +9,10 @@
                         <linearGradient id="linear-gradient" x1="0.027" y1="1.064" x2="0.029" y2="1.064" gradientUnits="objectBoundingBox">
                             <stop offset="0" stop-color="#ff7806" />
                             <stop offset="0.945" stop-color="#ff5737" />
-                            <stop offset="1" stop-color="#1f1f1f" />
+                            <stop offset="1" stop-color="#1f1f1f"/>
                         </linearGradient>
                     </defs>
-                    <g id="Groupe_17" data-name="Groupe 17" transform="translate(0 0)">
+                        <g id="Groupe_17" data-name="Groupe 17" transform="translate(0 0)"></g>
                         <g id="Groupe_1" data-name="Groupe 1" transform="translate(0 0)" clip-path="url(#clip-path)">
                             <path id="Tracé_1" data-name="Tracé 1" d="M-479.941-93.48-289.3,42.983-433.259,223.7-623.91,87.233Z" transform="translate(541.883 15.732)" fill="url(#linear-gradient)" />
                         </g>
@@ -23,7 +22,6 @@
 
                     </g>
                 </svg>
-            </a>
         </div>
 
         <div class="footer-left-text">
