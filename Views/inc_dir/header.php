@@ -349,8 +349,8 @@ function dynamicTitle()
         <div>
             <div class="nav-item3-right">
                 <a href="/index.php?action=compte">Compte</a>
-                <a href="/index.php?action=inscription">Inscription</a>
-                <?php 
+                <?php if(!isset($_SESSION['email'])) 
+                { ?> <a href="/index.php?action=inscription">Inscription</a> <?php } 
 
                 if(!empty($_SESSION['email']))
                 {

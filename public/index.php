@@ -1,6 +1,4 @@
 <?php
-
-
 define('BASE_DIR', '../');
 require BASE_DIR . 'app/Autoloader.php';
 
@@ -50,7 +48,6 @@ else
                             localStorage['reload'] = true;
                             window.location.reload();
                         } else {
-                        
                             // If there exists a 'reload' item
                             // then clear the 'reload' item in
                             // local storage
