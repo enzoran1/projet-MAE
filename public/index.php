@@ -39,10 +39,17 @@ else
    }
    if($_GET['action'] == "deconnexion")
    { 
-      session_destroy();
+      session_destroy(); ?>
+      <script>
+      if(!token) { 
+         window.location.reload(true);  
+         let token = 1; 
+         }
+      </script> <?php
    }
 }
 
 require '../Views/inc_dir/footer.php';
 
 // faire un autoload 
+?>

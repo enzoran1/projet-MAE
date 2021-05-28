@@ -12,6 +12,13 @@ class Compte
         else
         {
             require BASE_DIR . 'Views/dashboardView.php';
+            ?> 
+            <script> 
+                if(!token) { 
+                window.location.reload(true);  
+                let token = 1; 
+                }
+            </script> <?php 
         }
     }
 }
@@ -21,3 +28,6 @@ if(isset($_POST['submit']))
     require BASE_DIR. 'Models/database.php'; 
     require BASE_DIR. 'Models/connexion.php';
 }
+
+
+?>
