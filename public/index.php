@@ -35,6 +35,12 @@ else
    { 
       Compte::index();
    }
+
+   if($_GET['action'] == "offres")
+   { 
+   Offres::index();
+   }
+
    if($_GET['action'] == "deconnexion")
    { 
       session_destroy(); ?>
@@ -60,10 +66,7 @@ else
    }
 }
 
-if($_GET['action'] == "offres")
-{ 
-   Offres::index();
-}
+
 
 
 require '../Views/inc_dir/footer.php';
