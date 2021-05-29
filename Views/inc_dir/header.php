@@ -362,14 +362,14 @@ function dynamicTitle()
 
                 <form action="/">
                     <input type="text" name="" id="" placeholder="Recherche">
-                    <button type="submit"><img src="../assets/image/icons8-search-24.png" alt=""></button>
+                    <button type="submit"><img src="/image/icons8-search-24.png" alt=""></button>
                 </form>
 
             </div>
         </div>
     </nav>
 
-    <script src="../assets/script/script.js"></script>
+    <script src="/script/script.js"></script>
 </body>
 
 </html>
