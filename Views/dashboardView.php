@@ -9,7 +9,4 @@
     <li>
         Votre mot de passe : <?= $_SESSION['password'] ?>
     </li>
-    <li>
-        Téléphone : <?= $_SESSION['telephone'] ?>
-    </li>
 </ul>
