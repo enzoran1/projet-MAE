@@ -73,3 +73,45 @@ require '../Views/inc_dir/footer.php';
 
 // faire un autoload 
 ?>
+
+
+<?php
+
+// ------------ INDEX amélioré à effectué
+
+// include '../app/Autoloader.php';
+// Autoloader::register();
+
+// // On recupère le contrôleur
+// $controllerName = 'Home';
+// if(isset($_GET['controller']))
+// {
+//     $controllerName = ucfirst($_GET['controller']);
+// }
+// $controllerName .= 'Controller';
+
+// // On instancie le contrôleur
+// if(class_exists($controllerName))
+// {
+//     $controller = new $controllerName();
+// }
+// else
+// {
+//     $controller = new ErrorController();
+// }
+
+// // On identifie l'action à réaliser
+// $action = 'index';
+// if(isset($_GET['action']))
+// {
+//     $action = $_GET['action'];
+// }
+
+// // On execute l'action
+// if(method_exists($controller, $action)){
+//     $controller->$action();
+// }else{
+//     $controller->error404();
+// }
+
+
