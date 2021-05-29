@@ -140,23 +140,33 @@ function dynamicTitle()
         <ul class="nav-menu2">
 
             <li class="nav-item2">
-                <a href="index">Accueil</a>
+                <a href="/index">Accueil</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Découvrez l'IFA</a>
+                <a href="/index.php?action=decouvrez">Découvrez l'IFA</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Association</a>
+                <a href="/index.php?action=association">Association</a>
             </li>
             <li class="nav-item2">
-                <a href="#">Réseau</a>
+                <a href="/index.php?action=reseau">Réseau</a>
             </li>
             <li class="nav-item2">
-                <a href="./pages/connexion">Compte</a>
+                <a href="/index.php?action=compte">Compte</a>
             </li>
             <li class="nav-item2">
-                <a href="./page/inscription">Inscription</a>
+                <a href="/index.php?action=inscription">Inscription</a>
             </li>
+            <div class="nav-item2-right">
+                <a href="/index.php?action=compte">Compte</a>
+                <?php if(!isset($_SESSION['email'])) 
+                { ?> <a href="/index.php?action=inscription">Inscription</a> <?php } 
+
+                if(!empty($_SESSION['email']))
+                {
+                    ?> <a href="/index.php?action=deconnexion">Déconnexion</a> <?php 
+                } ?>
+            </div>
 
             <div class="nav-item-recherche2">
                 <form action="/">
@@ -364,7 +374,6 @@ function dynamicTitle()
                     <input type="text" name="" id="" placeholder="Recherche">
                     <button type="submit"><img src="/image/icons8-search-24.png" alt=""></button>
                 </form>
-
             </div>
         </div>
     </nav>

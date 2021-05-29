@@ -7,8 +7,8 @@
     <div class="btn1">
         <div class="btn">
 
-            <a href="pages/inscription">Inscription</a>
-            <a href="pages/connexion">Connexion</a>
+            <a href="/index.php?action=inscription">Inscription</a>
+            <a href="/index.php?action=connexion">Connexion</a>
 
         </div>
     </div>
