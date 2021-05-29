@@ -14,6 +14,11 @@ if($queryEmail->rowCount() > 0 )
     { 
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['password'] = $_POST['password']; 
+        $queryTel = $bdd->prepare('SELECT telephone from user WHERE user.password = :password');
+        $queryTel->bindParam(':password', $_POST['password']);
+        $queryTel->execute();
+        $telephone = implode($queryTel->fetch());
+        $_SESSION['telephone'] = $telephone;
     } 
     else 
     { 
