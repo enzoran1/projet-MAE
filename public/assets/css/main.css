@@ -189,6 +189,10 @@ margin-bottom: 15px;
 
 
 
+.carousel-item{
+    display: flex;
+    justify-content: center;
+}
 
 
 
@@ -216,6 +220,7 @@ margin-bottom: 15px;
     opacity: 0;
     -webkit-transition: opacity 0.6s ease-out;
     transition: opacity 0.6s ease-out;
+    
 }
 
 .carousel-item img {
@@ -262,6 +267,7 @@ margin-bottom: 15px;
 #carousel-3:checked ~ .control-3 {
     display: block;
 }
+
 
 .carousel-indicators {
     list-style: none;

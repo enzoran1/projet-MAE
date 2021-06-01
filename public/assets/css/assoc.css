@@ -1,0 +1,103 @@
+#equipetitle{
+    letter-spacing: 2px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-size: 270%;
+
+}
+.equipetitle__span{
+    color: #ff5737;
+}
+
+.carte__equipe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.carte__content{
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+
+}
+.carte__content h3{
+    margin-top: 80%;
+    color: white;
+    font-size: 150%;
+}
+
+.carte-staff1, .carte-staff2, .carte-staff3, .carte-staff4, .carte-staff5 , .carte-staff6 , .carte-staff7, .carte-staff8, .carte-staff9{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 280px;
+    text-align: center;
+    background-image: url(/assets/images/STAFF-EJ-3-667x800.jpg_1.png);
+    background-size: cover;
+    margin-bottom: 45px;
+    border-radius: 5px;
+    transition: 1s;
+    
+
+}
+
+.carte-staff2{
+    background-image: url(/assets/images/Anais-Andre-667x800.jpg.png);
+}
+.carte-staff3{
+    background-image: url(/assets/images/Charlotte-Rochette-667x800.jpg.png);
+}
+.carte-staff4{
+    background-image: url(/assets/images/asset6.png);
+}
+.carte-staff5{
+    background-image: url(/assets/images/asset7.png);
+}
+.carte-staff6{
+    background-image: url(/assets/images/asset8.png);
+}
+.carte-staff7{
+    background-image: url(/assets/images/asset9.png);
+}
+.carte-staff8{
+    background-image: url(/assets/images/STAFF-CT-4-667x800.jpg.png);
+}
+.carte-staff9{
+    background-image: url(/assets/images/STAFF-MN-2-667x800.jpg.png);
+}
+
+@media screen and (max-width:688px){
+
+    .carte__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    
+    }
+
+}
+
+
+@media screen and (max-width:992px){
+    .carte-staff1, .carte-staff2, .carte-staff3, .carte-staff4, .carte-staff5 , .carte-staff6 , .carte-staff7, .carte-staff8, .carte-staff9{
+
+        
+        width: 200px;
+        height: 220px;
+        
+        
+    
+    }
+
+}
+
+@media screen and (min-width:1312px){
+
+}

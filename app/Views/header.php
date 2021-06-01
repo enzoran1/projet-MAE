@@ -26,13 +26,15 @@ function dynamicTitle()
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php dynamicTitle()?></title>
-    <link rel="stylesheet" href="/assets/css/header.css"> 
-    <link rel="stylesheet" href="/assets/css/footer.css"> 
-    <link rel="stylesheet" href="/assets/css/formulaire.css"> 
-    <link rel="stylesheet" href="/assets/css/main.css"> 
-    <link rel="stylesheet" href="/assets/css/modal.css"> 
-     
+    <title><?php dynamicTitle() ?></title>
+    <link rel="stylesheet" href="/assets/css/header.css">
+
+    <link rel="stylesheet" href="/assets/css/formulaire.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/modal.css">
+    <link rel="stylesheet" href="/assets/css/assoc.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+
 </head>
 
 <body>
@@ -161,13 +163,11 @@ function dynamicTitle()
             </li>
             <div class="nav-item2-right">
                 <a href="/index.php?action=compte">Compte</a>
-                <?php if(!isset($_SESSION['email'])) 
-                { ?> <a href="/index.php?action=inscription">Inscription</a> <?php } 
+                <?php if (!isset($_SESSION['email'])) { ?> <a href="/index.php?action=inscription">Inscription</a> <?php }
 
-                if(!empty($_SESSION['email']))
-                {
-                    ?> <a href="/index.php?action=deconnexion">Déconnexion</a> <?php 
-                } ?>
+                                                                                                                if (!empty($_SESSION['email'])) {
+                                                                                                                    ?> <a href="/index.php?action=deconnexion">Déconnexion</a> <?php
+                                                                                                                                        } ?>
             </div>
 
             <div class="nav-item-recherche2">
@@ -351,23 +351,21 @@ function dynamicTitle()
             <li class="nav-item3">
                 <a href="/reseau">Réseau</a>
             </li>
-            <?php if(!empty($_SESSION['email'])) { 
-                ?> 
-            <li class="nav-item4">
-                <a href="/offres">Consulter les offres</a>
-            </li> <?php
-            } ?>
+            <?php if (!empty($_SESSION['email'])) {
+            ?>
+                <li class="nav-item4">
+                    <a href="/offres">Consulter les offres</a>
+                </li> <?php
+                    } ?>
         </ul>
         <div>
             <div class="nav-item3-right">
                 <a href="/compte">Compte</a>
-                <?php if(!isset($_SESSION['email'])) 
-                { ?> <a href="/inscription">Inscription</a> <?php } 
+                <?php if (!isset($_SESSION['email'])) { ?> <a href="/inscription">Inscription</a> <?php }
 
-                if(!empty($_SESSION['email']))
-                {
-                    ?> <a href="/deconnexion">Déconnexion</a> <?php 
-                } ?>
+                                                                                                if (!empty($_SESSION['email'])) {
+                                                                                                    ?> <a href="/deconnexion">Déconnexion</a> <?php
+                                                                                                    } ?>
             </div>
 
             <div class="nav-item-recherche3">
