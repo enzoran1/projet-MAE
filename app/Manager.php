@@ -1,5 +1,6 @@
 <?php
 
+
 abstract class Manager
 {
     private CONST DB_HOST = 'localhost';

@@ -306,19 +306,19 @@
             <?php if(!empty($_SESSION['email'])) { 
                 ?> 
             <li class="nav-item4">
-                <a href="/index.php?action=offres">Consulter les offres</a>
+                <a href="/offres">Consulter les offres</a>
             </li> <?php
             } ?>
         </ul>
         <div>
             <div class="nav-item3-right">
-                <a href="/index.php?action=compte">Compte</a>
+                <a href="/compte">Compte</a>
                 <?php if(!isset($_SESSION['email'])) 
-                { ?> <a href="/index.php?action=inscription">Inscription</a> <?php } 
+                { ?> <a href="/inscription">Inscription</a> <?php } 
 
                 if(!empty($_SESSION['email']))
                 {
-                    ?> <a href="/index.php?action=deconnexion">Déconnexion</a> <?php 
+                    ?> <a href="/deconnexion">Déconnexion</a> <?php 
                 } ?>
             </div>
 
