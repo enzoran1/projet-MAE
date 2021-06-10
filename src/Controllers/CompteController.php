@@ -5,8 +5,15 @@ class CompteController extends AbstractController
 { 
 
     public function index()
-    { 
-        $this->render('compte/index.php');
+    {
+        if(!isset($compte))
+        {  
+            $this->render('compte/connexion/index.php');
+        }
+        else
+        { 
+            $this->render('compte/dashboard/index.php');
+        }
     }
 
     public function connectUser()
