@@ -1,0 +1,449 @@
+
+
+body{
+    background-color: #1f1f1f;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.ban{
+    
+    background-image: url(../image/ban-home.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.ban{
+    background-color: rgba(0, 0, 0, 0.438);
+}
+.ban-titre{
+    color: white;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.ban-titre h1{
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.btn a{
+
+    
+text-decoration: none;
+color: white;
+background: linear-gradient(115deg, rgba(255,124,0,1) 0%,rgba(255,87,56,1) 100%);
+padding: 10px;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 13%/50%;
+font-weight: bold;
+font-size: 100%;
+transition: 1s;
+padding-left: 18px;
+padding-right: 18px;
+
+
+    
+}
+.btn a:hover{
+
+    background: linear-gradient(115deg, rgba(255,87,56,1) 0%,rgba(255,124,0,1) 100%);
+    
+    
+}
+
+.titre-text{
+    color: white;
+    text-align: center;
+    padding: 16px;
+    border-top: 3px solid #ff5737;
+    border-bottom: 3px solid #ff5737;
+    
+}
+.titre-text p{
+    text-align: justify;
+    margin-top: 20px;
+    transition: 1s;
+}
+.titre-text h2{
+    margin-top: 20px;
+    transition: 1s;
+}
+
+.titre-text{
+     padding: 32px;
+}
+
+.titre-text h2{
+     font-size: 200%;
+     transition: 1s;
+}
+
+.titre-text p{
+     font-size: 120%;
+     transition: 1s;
+}
+
+#interrogation-couleur{
+    color:#ff5737 ;
+}
+
+.carte{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.carte h3{
+    color: white;
+    margin-top: 30px;
+    font-size: 150%;
+}
+.carte a{
+    text-decoration: none;
+color: white;
+background: linear-gradient(115deg, rgba(255,124,0,1) 0%,rgba(255,87,56,1) 100%);
+padding: 10px;
+margin-left: 60px;
+margin-right: 60px;
+border-radius: 13%/50%;
+font-weight: bold;
+font-size: 150%;
+
+transition: 1s;
+margin-bottom: 15px;
+}
+.carte a:hover{
+    background: linear-gradient(115deg, rgba(255,87,56,1) 0%,rgba(255,124,0,1) 100%);
+
+}
+
+.carte-eleves, .carte-professionnels,.carte-interface-alumni{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 280px;
+    text-align: center;
+    background-image: url(../image/photo-carte.jpg);
+    background-size: cover;
+    margin-bottom: 45px;
+    border-radius: 5px;
+    transition: 1s;
+    
+
+}
+.carte-professionnels{
+    
+    background-image: url(../image/photo-carte1.jpg);
+   
+
+}
+.carte-interface-alumni{
+    background-image: url(../image/photo-carte2.jpg);
+
+}
+
+.banhero{ 
+    background-size: cover;
+    height: 100vh;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banhero.decouverte { 
+    background-image: url(../image/michel-grolet-EfKJzb-Bpl8.jpg);
+}
+
+.banhero.association { 
+    background-image: url(../image/pexels-fauxels-3183197.jpg);
+}
+
+.spacer { 
+    width: 100%;
+    height: 20vh;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+.carousel {
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    margin-top: 200px;
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+
+.carousel-item img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+    color: #428bca;
+}
+
+#title {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 27px;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Open Sans', sans-serif;
+    z-index: 9999;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+}
+
+
+
+
+h2#equipetitle { 
+    text-align: center;
+    margin-top: 25px;
+    color: white;
+}
+
+
+
+
+
+
+/* **********************************************   REPSONSIVE  **********************************************  */ 
+
+@media screen and (min-width:688px){
+
+    .ban-titre{
+        font-size: 150%;
+        transition: 1s;
+    }
+
+   .btn{
+       font-size: 140%;
+   }
+   .btn a{
+       margin-right: 50px;
+       margin-left: 50px;
+       padding-left: 25px;
+       padding-right: 25px;
+   }
+ 
+   .carte{
+       display: flex;
+       justify-content: space-around;
+       flex-direction: initial;
+       margin: 10px;
+       margin-top: 50px;
+   }
+   .carte-professionnels{
+       margin-left: 10px;
+       margin-right: 10px;
+   }
+   
+    
+
+
+}
+@media screen and (max-width:687px){
+
+    
+   
+}
+
+@media screen and (min-width:992px){
+    .btn{
+        font-size: 170%;
+    }
+    .ban-titre{
+        font-size: 170%;
+    
+    }
+    .btn a{
+        margin-right: 60px;
+        margin-left: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .titre-text{
+        padding: 42px;
+    }
+    .titre-text h2{
+        font-size: 230%;
+        transition: 1s;
+    }
+    .titre-text p{
+        font-size: 140%;
+        transition: 1s;
+    }
+
+    
+}
+@media screen and (max-width:991px){ 
+    
+
+}
+
+
+@media screen and (min-width:992px){
+
+  
+
+   
+}
+@media screen and (min-width:1312px){
+    .ban-titre{
+        font-size: 200%;
+    
+    }
+
+   .btn{
+       font-size: 220%;
+   }
+   .btn a{
+    margin-right: 70px;
+    margin-left: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.titre-text{
+    padding: 62px;
+}
+.titre-text h2{
+    font-size: 250%;
+    transition: 1s;
+}
+.titre-text p{
+    font-size: 160%;
+    transition: 1s;
+}
+
+}
+
+
+@media screen and (min-width:1500px){
+
+    .carte-eleves,.carte-professionnels,.carte-interface-alumni{
+        width: 280px;
+        height: 320px;
+        transition: 1s;
+    }
+    
+
+}
+
+
