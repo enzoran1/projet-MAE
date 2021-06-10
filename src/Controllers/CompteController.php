@@ -6,7 +6,7 @@ class CompteController extends AbstractController
 
     public function index()
     {
-        if(!isset($compte))
+        if(!isset($_SESSION['compte']))
         {  
             $this->render('compte/connexion/index.php');
         }
@@ -16,13 +16,14 @@ class CompteController extends AbstractController
         }
     }
 
-    public function connectUser($compte)
+    public function connexion()
     { 
         {
             $comptemanager = new CompteManager();
             $comptemanager->testConnexion();
-            $_SESSION['compte'] = $compte; 
+            $compte = new Compte($_POST['email'], $_POST['password'], false, false);
             $compte->is_connected = true;
+            $_SESSION['compte'] = $compte; 
         }
     }
 
@@ -33,9 +34,3 @@ class CompteController extends AbstractController
 
 }
 
-if(isset($_POST['submit']))
-{ 
-    $compteController = new CompteController();
-    $compte = new Compte($_POST['email'], $_POST['password'], false, false);
-    $compteController->connectUser($compte);
-}

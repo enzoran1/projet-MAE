@@ -1,4 +1,4 @@
-<form action="" method="POST" class="formulaire">
+<form action="compte/connexion" method="POST" class="formulaire">
     <div class="formulaire__container">
         <h3>Connexion</h3>
         <div class="formulaire__contenue">
