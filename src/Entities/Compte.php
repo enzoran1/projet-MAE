@@ -1,7 +1,7 @@
 <?php 
 
 
-class Compte
+abstract class Compte
 { 
     private string $mail; 
     private string $password; 
@@ -68,3 +68,4 @@ class Compte
     }
 
 }
+
