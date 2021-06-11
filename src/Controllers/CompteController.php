@@ -21,12 +21,15 @@ class CompteController extends AbstractController
         {
             $comptemanager = new CompteManager();
             $comptemanager->testConnexion();
+            $this->render('compte/dashboard/index.php');
+            
         }
     }
 
     public function logout()
     { 
         session_destroy();
+        session_unset();
     }
 
 }

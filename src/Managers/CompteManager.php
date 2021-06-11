@@ -14,18 +14,14 @@ class CompteManager extends Manager
             $queryMail = $bdd->prepare("SELECT * FROM user WHERE email = :logMail");
             $queryMail->execute(array('logMail' => $logMail));
 
-            if($res = $queryMail->fetch())
+            if($res = $queryMail->fetch(PDO::FETCH_ASSOC))
             {
-                //if(password_verify($logPassword, $res['password'])) // ERROR
                 if($logPassword == $res['password'])
                 { 
-                    // BUG 
-                    var_dump($res);
                     $account = new Compte($res);
                     $account->setMail($res['email']);
                     $account->setIs_connected(true);
                     $_SESSION['compte'] = $account; 
-                    var_dump($account);
                 }
                 else
                 {
