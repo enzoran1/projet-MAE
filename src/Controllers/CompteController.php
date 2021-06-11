@@ -30,6 +30,7 @@ class CompteController extends AbstractController
     { 
         session_destroy();
         session_unset();
+        header('Location: /Home');
     }
 
 }

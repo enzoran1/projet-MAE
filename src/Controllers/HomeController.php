@@ -4,8 +4,14 @@ class HomeController extends AbstractController
 {
     public function index()
     {
-        //Traitements
-        $this->render('home/index.php');
+        if(empty($_SESSION))
+        {
+            $this->render('home/index.php');
+        }
+        else
+        {
+            $this->render('home/index.php'); // à modifier, créer une page d'accueil
+        }
     }
 }
 
