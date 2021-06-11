@@ -1,7 +1,7 @@
 <?php 
 
 
-abstract class Compte
+class Compte
 { 
     private string $mail; 
     private string $password; 
@@ -9,12 +9,22 @@ abstract class Compte
     private bool $is_verified = false;
     private bool $is_connected = false;
 
-    public function __construct($mail, $password)
+    public function __construct( array $data)
     { 
-        $this->mail = $mail;
-        $this->password = $password;
-        $this->is_verified = false;
-        $this->is_connected = true;
+        $this->hydrate($data);
+    }
+
+    public function hydrate(array $data)
+    { 
+        foreach($data as $key => $value)
+        { 
+            $method = 'set'. ucfirst($key);
+
+            if(method_exists($this, $method))
+            { 
+                $this->$method($value);
+            }
+        }
     }
 
     public function setMail($mail)

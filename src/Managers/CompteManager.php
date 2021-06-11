@@ -3,8 +3,6 @@
 
 class CompteManager extends Manager
 { 
-    private mixed $sql;
-
     public function testConnexion()
     { 
         if(!empty($_POST['email']) && !empty($_POST['password']))
@@ -18,9 +16,16 @@ class CompteManager extends Manager
 
             if($res = $queryMail->fetch())
             {
-                if(password_verify($logPassword, $res['password']))
+                //if(password_verify($logPassword, $res['password'])) // ERROR
+                if($logPassword == $res['password'])
                 { 
-                    echo 'ok'; 
+                    // BUG 
+                    var_dump($res);
+                    $account = new Compte($res);
+                    $account->setMail($res['email']);
+                    $account->setIs_connected(true);
+                    $_SESSION['compte'] = $account; 
+                    var_dump($account);
                 }
                 else
                 {
@@ -31,6 +36,7 @@ class CompteManager extends Manager
             { 
                 echo 'erreur sur les identifiants';
             }
+            
         }
     }
 }

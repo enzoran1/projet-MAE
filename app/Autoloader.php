@@ -15,17 +15,16 @@ class Autoloader
         self::$list[] = $className; 
                
         if(file_exists(BASE_DIR . 'app/' . $className . '.php'))
-        {
             require BASE_DIR . 'app/' . $className . '.php';
-        }
-        else if(file_exists(BASE_DIR . 'src/Controllers/' . $className . '.php'))
-        {
+
+        if(file_exists(BASE_DIR . 'src/Controllers/' . $className . '.php'))
             require BASE_DIR . 'src/Controllers/' . $className . '.php';
-        }
-        else if(file_exists(BASE_DIR . 'src/Managers/' . $className . '.php'))
-        {
+        
+        if(file_exists(BASE_DIR . 'src/Managers/' . $className . '.php'))
             require BASE_DIR . 'src/Managers/' . $className . '.php';
-        }
+        
+        if(file_exists(BASE_DIR . 'src/Entities/' . $className . '.php'))
+            require BASE_DIR . 'src/Entities/' . $className . '.php';
     }
     
     /**

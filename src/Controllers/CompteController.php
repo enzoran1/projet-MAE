@@ -21,9 +21,6 @@ class CompteController extends AbstractController
         {
             $comptemanager = new CompteManager();
             $comptemanager->testConnexion();
-            $compte = new Compte($_POST['email'], $_POST['password']);
-            $compte->setIs_connected(true);
-            $_SESSION['compte'] = $compte; 
         }
     }
 
