@@ -303,21 +303,27 @@
             <li class="nav-item3">
                 <a href="/reseau">Réseau</a>
             </li>
-            <?php if(!empty($_SESSION['email'])) { 
+            <?php if(!empty($_SESSION)) { 
                 ?> 
-            <li class="nav-item4">
+            <li class="nav-item3">
                 <a href="/offres">Consulter les offres</a>
-            </li> <?php
+            </li>
+            
+             <?php
             } ?>
         </ul>
         <div>
+
             <div class="nav-item3-right">
                 <a href="/compte">Compte</a>
                 
-                <a href="/inscription">Inscription</a> 
+                <?php if(empty($_SESSION)) { ?> 
+                <a href="/inscription">Inscription</a>
+                <?php } else { ?>
 
-                
-            </div>
+                <a href="/compte/logout">Deconnexion</a>
+            </div> <?php } ?>
+                         
 
             <div class="nav-item-recherche3">
 
