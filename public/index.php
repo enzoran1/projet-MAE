@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 
 // Définitions de constantes
 define('BASE_DIR','../');

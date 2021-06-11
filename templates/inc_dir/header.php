@@ -313,13 +313,10 @@
         <div>
             <div class="nav-item3-right">
                 <a href="/compte">Compte</a>
-                <?php if(!isset($_SESSION['email'])) 
-                { ?> <a href="/inscription">Inscription</a> <?php } 
+                
+                <a href="/inscription">Inscription</a> 
 
-                if(!empty($_SESSION['email']))
-                {
-                    ?> <a href="/deconnexion">Déconnexion</a> <?php 
-                } ?>
+                
             </div>
 
             <div class="nav-item-recherche3">

@@ -1,14 +1,21 @@
-<div class="carte">
-    <div class="carte-eleves">
-
-        <h3>Eleves</h3>
-        <a href="/inscription/eleve/index.php">Voir</a>
+<form action="inscription/index.php" method="POST" class="formulaire">
+    <div class="formulaire__container">
+        <h3>Inscription</h3>
+        <div class="formulaire__contenue">
+            <label for="email">
+                <input type="email" name="email" id="email" placeholder="email">
+            </label>
+        </div>
+        <div class="formulaire__contenue">
+            <label for="password">
+                <input type="password" name="password" id="password" placeholder="password">
+            </label>
+        </div>
+        <div class="formulaire__contenue">
+            <label for="tel">
+                <input type="text" name="telephone" id="telephone" placeholder="telephone">
+            </label>
+        </div>
+        <button type="submit" name="submit" value='submit'>Envoyer</button>
     </div>
-
-    <div class="carte-professionnels">
-
-        <h3>Professionnels</h3>
-        <a href="inscription/pro/index.php">Voir</a>
-
-    </div>
-</div>
+</form>

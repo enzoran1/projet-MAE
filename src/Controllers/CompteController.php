@@ -6,7 +6,7 @@ class CompteController extends AbstractController
 
     public function index()
     {
-        if(!isset($_SESSION['compte']))
+        if(empty($_SESSION))
         {  
             $this->render('compte/connexion/index.php');
         }
