@@ -4,9 +4,9 @@
 abstract class Manager
 {
     private CONST DB_HOST = 'localhost';
-    private CONST DB_NAME = 'mvc';
+    private CONST DB_NAME = 'projetifa';
     private CONST DB_USERNAME = 'root';
-    private CONST DB_PWD = 'root';
+    private CONST DB_PWD = '';
 
     protected $pdoInstance;
 

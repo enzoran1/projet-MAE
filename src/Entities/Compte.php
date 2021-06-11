@@ -9,12 +9,12 @@ abstract class Compte
     private bool $is_verified = false;
     private bool $is_connected = false;
 
-    public function __construct($mail, $password, $is_verified, $is_connected)
+    public function __construct($mail, $password)
     { 
         $this->mail = $mail;
         $this->password = $password;
-        $this->is_verified = $is_verified;
-        $this->is_connected = $is_connected;
+        $this->is_verified = false;
+        $this->is_connected = true;
     }
 
     public function setMail($mail)
@@ -57,7 +57,7 @@ abstract class Compte
         return $this->is_verified;
     }
 
-    public function setIs_connected($is_connected)
+    public function setIs_connected( bool $is_connected)
     { 
         $this->is_connected = $is_connected;
     }

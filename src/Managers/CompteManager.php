@@ -3,24 +3,34 @@
 
 class CompteManager extends Manager
 { 
+    private mixed $sql;
 
     public function testConnexion()
     { 
-        if(!empty($_POST['submit']))
+        if(!empty($_POST['email']) && !empty($_POST['password']))
         {
-            $query = 'SELECT FROM user (email, password) WHERE user.email = :email AND user.password = :password';
-            $this->setPdoInstance(); // On fait la connexion pdo 
-            $this->executeQuery($query, [$_POST['email'], $_POST['password']]);  // Requête pour mail/pass
-            if($compteManager = $query->fetch())
-            { 
+            $logMail = htmlentities($_POST['email']);
+            $logPassword = htmlentities($_POST['password']);
 
+            $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');            
+            $queryMail = $bdd->prepare("SELECT * FROM user WHERE email = :logMail");
+            $queryMail->execute(array('logMail' => $logMail));
+
+            if($res = $queryMail->fetch())
+            {
+                if(password_verify($logPassword, $res['password']))
+                { 
+                    echo 'ok'; 
+                }
+                else
+                {
+                    echo 'false';
+                }
             }
-            echo 'ok';
-        } 
-        else
-        { 
-            echo 'erreur';
+            else
+            { 
+                echo 'erreur sur les identifiants';
+            }
         }
     }
-
 }
