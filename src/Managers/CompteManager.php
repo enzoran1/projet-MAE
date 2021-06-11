@@ -35,4 +35,9 @@ class CompteManager extends Manager
             
         }
     }
+
+    public function testInscription()
+    { 
+        //Silence is golden... 
+    }
 }
