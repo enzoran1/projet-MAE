@@ -1,4 +1,4 @@
-<form action="inscription/addaccount" method="POST" class="formulaire">
+<form action="inscription/inscription" method="POST" class="formulaire">
     <div class="formulaire__container">
         <h3>Inscription</h3>
         <div class="formulaire__contenue">

@@ -5,7 +5,7 @@
         $this->render('inscription/index.php');
     }
 
-    public function addacount() 
+    public function inscription() 
     { 
         $compteManager = new CompteManager();
         $compteManager->testInscription();
