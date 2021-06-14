@@ -54,7 +54,7 @@
         <div class="nav-item-recherche">
             <form action="/">
                 <input type="text" name="" id="" placeholder="Recherche">
-                <button type="submit"><img src="../assets/image/icons8-search-48.png" alt=""></button>
+                <button type="submit"><img src="/image/icons8-search-48.png" alt=""></button>
             </form>
         </div>
     </ul>
@@ -125,7 +125,7 @@
         <div class="nav-item-recherche2">
             <form action="/">
                 <input type="text" name="" id="" placeholder="Recherche">
-                <button type="submit"><img src="../assets/css/image/icons8-search-48.png" alt=""></button>
+                <button type="submit"><img src="/image/icons8-search-48.png" alt=""></button>
             </form>
         </div>
     </ul>
@@ -334,5 +334,3 @@
             </div>
         </div>
     </nav>
-
-    <script src="/script/script.js"></script>

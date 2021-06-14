@@ -11,3 +11,6 @@ require BASE_DIR . 'app/Autoloader.php';
 $router = new Router($_SERVER['REQUEST_URI']);
 $router->execute();
 
+?>
+
+<script src="/js/script.js">s </script>
