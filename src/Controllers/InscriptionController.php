@@ -9,6 +9,5 @@
     { 
         $compteManager = new CompteManager();
         $compteManager->testInscription();
-        echo 'ok2';
     }
 }
