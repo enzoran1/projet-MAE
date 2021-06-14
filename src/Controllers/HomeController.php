@@ -10,7 +10,7 @@ class HomeController extends AbstractController
         }
         else
         {
-            $this->render('home/index.php'); // à modifier, créer une page d'accueil
+            $this->render('home/indexuser.php'); // à modifier, créer une page d'accueil
         }
     }
 }

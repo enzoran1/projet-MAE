@@ -21,8 +21,7 @@ class CompteController extends AbstractController
         {
             $comptemanager = new CompteManager();
             $comptemanager->testConnexion();
-            $this->render('compte/dashboard/index.php');
-            
+            $this->render('home/indexuser.php'); 
         }
     }
 

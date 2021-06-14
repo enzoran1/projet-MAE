@@ -40,7 +40,9 @@ class CompteManager extends Manager
 
     public function testInscription()
     { 
-        if(!empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['telephone']))
+        if(!empty($_POST['email']) 
+        && !empty($_POST['password']) 
+        && !empty($_POST['telephone']))
         { 
             $mail           =       htmlEntities($_POST['email']);
             $password       =       htmlEntities($_POST['password']);
@@ -66,4 +68,5 @@ class CompteManager extends Manager
 
         }
     }
+ 
 }

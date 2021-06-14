@@ -113,8 +113,8 @@ padding-right: 18px;
 }
 .carte h3{
     color: white;
-    margin-top: 30px;
     font-size: 150%;
+    line-height: 50px;
 }
 .carte a{
     text-decoration: none;
@@ -135,7 +135,7 @@ margin-bottom: 15px;
 
 }
 
-.carte-eleves, .carte-professionnels,.carte-interface-alumni{
+.carte-eleves, .carte-professionnels, .carte-interface-alumni{
 
     display: flex;
     flex-direction: column;
@@ -148,21 +148,26 @@ margin-bottom: 15px;
     margin-bottom: 45px;
     border-radius: 5px;
     transition: 1s;
-    
-
 }
-.carte-professionnels{
-    
+
+
+.carte-professionnels {
     background-image: url(../image/photo-carte1.jpg);
-   
-
 }
-.carte-interface-alumni{
+
+.carte-interface-alumni {
     background-image: url(../image/photo-carte2.jpg);
-
 }
 
-.banhero{ 
+.card-gallery { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 30px;
+}
+
+.banhero { 
     background-size: cover;
     height: 100vh;
     background-position: center;
@@ -186,12 +191,6 @@ margin-bottom: 15px;
     height: 20vh;
     margin-top: 20px;
 }
-
-
-
-
-
-
 
 
 .carousel {

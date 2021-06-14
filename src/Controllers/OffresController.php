@@ -3,18 +3,19 @@
 class Offres extends AbstractController
 { 
     public function index()
+    /* 
+    *   Par défaut, fonction getAll
+    */
     { 
-        $this->render('offres/index.php');
+        $this->render('offres/index.php'); 
     }
 
     public function show()
+    /* 
+    *   Méthode show, prend en action l'article à afficher 
+    */ 
     { 
         // silence is golden...
-    }
-
-    public function getAll()
-    {
-         // Appeller le model qui récup tous les éléments 
     }
 
     public function getOffre($id)

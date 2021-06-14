@@ -43,6 +43,7 @@ cursor: pointer;
 }
 .formulaire__contenue input::placeholder{
     font-size: 70%;
+    padding-left: 10px;
     
 }
 .formulaire__container{
