@@ -48,11 +48,11 @@ class CompteManager extends Manager
 
             $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');
 
-            $queryMail = $bdd->prepare('SELECT * FROM user WHERE email : :email');
+            $queryMail = $bdd->prepare('SELECT email FROM user WHERE email : :email');
             $queryMail->execute(array('email' => $mail));
-            if($queryMail->rowCount() !== 0) 
-            {   
-                echo 'adresse e-mail déjà utilisée';
+            if($queryMail->rowCount() > 0) 
+            {   // n'arrive pas à implenter l'erreur si l'email est déjà utilisé... 
+                die('utilisateur déjà pris');
             }
             else 
             { 
@@ -61,7 +61,6 @@ class CompteManager extends Manager
                 $finalQuery = $bdd->prepare('INSERT into user (email, password, telephone) VALUES (?, ?, ?)');
                 $finalQuery->execute(array($mail, $password, $telephone));
                 $finalQuery->fetch();
-                echo 'bien se passer ne t\'inquiète pas';
             }
             
 

@@ -9,5 +9,6 @@
     { 
         $compteManager = new CompteManager();
         $compteManager->testInscription();
+        $this->render('compte/connexion/index.php');
     }
 }
