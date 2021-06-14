@@ -5,7 +5,7 @@ class Compte
 { 
     private string $mail; 
     private string $password; 
-    private ?array $role = ['pro', 'eleves', 'admin']; 
+    private array $role = []; 
     private bool $is_verified = false;
     private bool $is_connected = false;
 

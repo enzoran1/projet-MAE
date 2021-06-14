@@ -23,6 +23,7 @@ class CompteManager extends Manager
                     $account = new Compte($res);
                     $account->setMail($res['email']);
                     $account->setIs_connected(true);
+                    $account->setRoles(['eleves']);
                     $_SESSION['compte'] = $account; 
                 }
                 else
