@@ -51,11 +51,14 @@ class CompteManager extends Manager
 
             $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');
 
-            $queryMail = $bdd->prepare('SELECT email FROM user WHERE email : :email');
+            $queryMail = $bdd->prepare('SELECT * FROM user WHERE email = :email');
             $queryMail->execute(array('email' => $mail));
-            if($queryMail->rowCount() > 0) 
-            {   // n'arrive pas à implenter l'erreur si l'email est déjà utilisé... 
-                die('utilisateur déjà pris');
+
+            $count = $queryMail->rowCount();
+            if($queryMail->columnCount() > 0) 
+            {
+                header('Location:error/index.php');
+                exit;
             }
             else 
             { 
