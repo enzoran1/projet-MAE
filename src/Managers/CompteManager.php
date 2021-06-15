@@ -54,14 +54,13 @@ class CompteManager extends Manager
             $queryMail = $bdd->prepare('SELECT * FROM user WHERE email = :email');
             $queryMail->execute(array('email' => $mail));
 
-            $count = $queryMail->rowCount();
-            if($queryMail->columnCount() > 0) 
-            {
-                header('Location:error/index.php');
-                exit;
-            }
-            else 
-            { 
+            // $count = $queryMail->rowCount();
+            // if($queryMail->columnCount() > 0) 
+            // {
+            //     exit;
+            // }
+            // else 
+            // { 
                 $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');
 
                 $finalQuery = $bdd->prepare('INSERT into user (email, password, telephone) VALUES (?, ?, ?)');
@@ -73,4 +72,4 @@ class CompteManager extends Manager
         }
     }
  
-}
+// }

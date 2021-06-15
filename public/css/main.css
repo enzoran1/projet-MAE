@@ -211,6 +211,9 @@ margin-bottom: 15px;
 }
 
 .carousel-item {
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
     position: absolute;
     opacity: 0;
     -webkit-transition: opacity 0.6s ease-out;

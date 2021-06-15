@@ -15,9 +15,8 @@
     <title><?= $title ?? '' ?></title>
   </head>
   <body>
-  <?= require_once 'inc_dir/header.php'; ?>
     <header>
-        <?php //include 'Views/_partials/nav.php'; ?>
+      <?php require_once 'inc_dir/header.php'; ?>
     </header>
 
     <main>
@@ -25,5 +24,5 @@
     </main>
 
   </body>
-  <?= require_once 'inc_dir/footer.php'; ?>
+  <?php  require_once 'inc_dir/footer.php'; ?>
 </html>

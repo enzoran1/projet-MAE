@@ -6,5 +6,5 @@
 
 if(isset($_SESSION))
 { 
-    var_dump($_SESSION['mail']);
+    print_r($_SESSION);
 }
