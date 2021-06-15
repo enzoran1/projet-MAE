@@ -21,14 +21,8 @@ class CompteController extends AbstractController
         {
             $comptemanager = new CompteManager();
             $comptemanager->testConnexion();
-            if(!isset($finalQuery))
-            { 
-                $this->render('error/index.php');
-            }
-            else
-            {
-                $this->render('home/show.php'); 
-            }
+            $this->render('home/index.php'); 
+            
         }
     }
 
