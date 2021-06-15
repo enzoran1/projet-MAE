@@ -13,4 +13,4 @@ $router->execute();
 
 ?>
 
-<script src="/js/script.js">s </script>
+<script src="/js/script.js"></script>

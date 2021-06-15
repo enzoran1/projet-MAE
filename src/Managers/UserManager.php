@@ -1,7 +1,7 @@
 <?php 
 
 
-class CompteManager extends Manager
+class UserManager extends Manager
 { 
 
 
@@ -19,8 +19,12 @@ class CompteManager extends Manager
             if($res = $queryMail->fetch(PDO::FETCH_ASSOC))
             {
                 if($logPassword == $res['password'])
-                {
-                    $_SESSION['compte'] = $res; 
+                { 
+                    $account = new User($res);
+                    $account->setMail($res['email']);
+                    $account->setIs_connected(true);
+                    $account->setRoles(['eleves']);
+                    $_SESSION['compte'] = $account; 
                 }
                 else
                 {
@@ -62,7 +66,8 @@ class CompteManager extends Manager
                 $finalQuery = $bdd->prepare('INSERT into user (email, password, telephone) VALUES (?, ?, ?)');
                 $finalQuery->execute(array($mail, $password, $telephone));
                 $finalQuery->fetch();
-            }        
+            }
+            
 
         }
     }

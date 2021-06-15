@@ -1,9 +1,8 @@
 <?php 
 
 
-class Compte
+class User
 { 
-    private $id_user;
     private string $mail; 
     private string $password; 
     private array $role = []; 
@@ -28,24 +27,12 @@ class Compte
         }
     }
 
-
-
-    public function setId_user($id_user)
-    { 
-        $this->id_user = $id_user;
-    }
-
-    public function getId_user()
-    {
-        return $this->id_user;
-    }
-
-    public function setEmail($mail)
+    public function setMail($mail)
     { 
         $this->mail = $mail;
     }
 
-    public function getEmail()
+    public function getMail()
     { 
         return $this->mail;
     }
@@ -92,5 +79,3 @@ class Compte
 
 }
 
-
-//set id et get id 
