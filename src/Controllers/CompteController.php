@@ -32,6 +32,11 @@ class CompteController extends AbstractController
         session_unset();
         header('Location: /Home');
     }
-
 }
 
+
+
+/* Il faut intégrer condition en fonction si l'utilisateur est pro ou eleve .. et afficher en 
+fonction les bonnes rubriques
+
+*/ 

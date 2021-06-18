@@ -7,8 +7,8 @@
     <div class="btn1">
         <div class="btn">
 
-            <a href="/compte">Inscription</a>
-            <a href="/connexion">Connexion</a>
+            <a href="/inscription">Inscription</a>
+            <a href="/compte">Connexion</a>
 
         </div>
     </div>

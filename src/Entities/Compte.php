@@ -28,8 +28,6 @@ class Compte
         }
     }
 
-
-
     public function setId_user($id_user)
     { 
         $this->id_user = $id_user;
@@ -91,6 +89,3 @@ class Compte
     }
 
 }
-
-
-//set id et get id 
