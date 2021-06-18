@@ -4,7 +4,6 @@
 class CompteManager extends Manager
 { 
 
-
     public function testConnexion()
     { 
         if(!empty($_POST['email']) && !empty($_POST['password']))
@@ -50,21 +49,11 @@ class CompteManager extends Manager
             $queryMail = $bdd->prepare('SELECT * FROM user WHERE email = :email');
             $queryMail->execute(array('email' => $mail));
 
-            // $count = $queryMail->rowCount();
-            // if($queryMail->columnCount() > 0) 
-            // {
-            //     exit;
-            // }
-            // else 
-            // { 
-                $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');
+            $bdd = new PDO('mysql:host=localhost;dbname=projetifa','root','');
 
-                $finalQuery = $bdd->prepare('INSERT into user (email, password, telephone) VALUES (?, ?, ?)');
-                $finalQuery->execute(array($mail, $password, $telephone));
-                $finalQuery->fetch();
-            }        
-
-        }
+            $finalQuery = $bdd->prepare('INSERT into user (email, password, telephone) VALUES (?, ?, ?)');
+            $finalQuery->execute(array($mail, $password, $telephone));
+            $finalQuery->fetch();
+        }        
     }
- 
-// }
+}
